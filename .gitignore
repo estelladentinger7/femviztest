@@ -1,4 +1,4 @@
-/build
+build/
 .svelte-kit/
 .DS_Store
 # Logs
