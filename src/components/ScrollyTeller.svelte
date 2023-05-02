@@ -494,7 +494,7 @@ let geoJsonToFit = {
     <div class="image" class:visible4={isVisible4} />
     <div class="image" class:visible5={isVisible5} />
 
-    <img src="./Food.png" alt="food" class="image" class:visible3={isVisible3} /> 
+    <!-- <img src="./Food.png" alt="food" class="image" class:visible3={isVisible3} /> -->
 
     <div class="sexowners-container">
       <div class="Sexownerbp">
