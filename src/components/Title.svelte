@@ -21,14 +21,14 @@
   <div class="col-6" style="float: left; width: 50%;">
     <h2>Biparental Family</h2>
     <div class="image-container" style="float: center">
-      <img src="./static/people-512.jpg" alt="hola1" style="width: 50%;" title="This is a tooltip."/> 
+      <!-- <img src="./static/people-512.jpg" alt="hola1" style="width: 50%;" title="This is a tooltip."/> -->
       <div class="overlay"> 5 people family group (on avg.). Both parents are present.</div>
     </div>
   </div>
   <div class="col-6" style="float: right; width: 50%;">
     <h2>Single Mothers</h2>
     <div class="image-container">
-      <img src="./static/people-512.jpg" alt="hola1" style="width: 50%;" title="This is a tooltip."/> 
+      <!-- <img src="./static/people-512.jpg" alt="hola1" style="width: 50%;" title="This is a tooltip."/> -->
       <div class="overlay">4 people family group (on avg.). Only the mother is present, does not seek family reunification.</div>
     </div>
   </div>

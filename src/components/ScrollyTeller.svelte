@@ -9,10 +9,63 @@ import PropertyTypebp from './propertyTypebp.svelte';
 import Sexownerbp from './sexownerbp.svelte';
 import Sexownersm from './sexownersm.svelte';
 import DensityPlot from "./DensityPlot.svelte";
+import StaticCircle from "./StaticCircle.svelte";
+import ExpandingCircle from "./ExpandingCircles.svelte";
+import ShrinkingCircle from './ShrinkingCircles.svelte';
 import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
+import HousingCompare from "./HousingCompare.svelte";
+import BusinessCompare from "./BusinessCompare.svelte";
+import Motivation from "./Motivation.svelte";
+import ConditionalText from "./ConditionalText.svelte";
+import Intermediary from "./Intermediary.svelte";
+
+const data1 = [
+  { label: 'Item 1', value: 85 },
+    { label: 'Item 2', value: 31 },
+    { label: 'Item 3', value: 17 },
+    { label: 'Item 4', value: 25 },
+    { label: 'Item 5', value: 19 },
+];
+
+const data2 = [
+  { label: 'Item 1', value: 85 },
+    { label: 'Item 2', value: 33 },
+    { label: 'Item 3', value: 20 },
+    { label: 'Item 4', value: 23 },
+    { label: 'Item 5', value: 15 },
+];
+
+const data3 = [
+  { label: 'Item 1', value: 15 },
+
+];
+
+const data4 = [
+  { label: 'Item 1', value: 8 },
+
+];
+
+let chartWidth = 500;
+
+let container;
+
+let isVisible1 = false;
+let isVisible2 = false;
+
+  $: {
+    if (index === 1) {
+      isVisible1 = true;
+      isVisible2 = false;
+    } else if (index === 2) {
+      isVisible2 = true;
+      isVisible1 = false;
+    } else {
+      isVisible2 = false;
+    }
+  }
+
 
 import { geoMercator } from "d3-geo";
-
 
 let count, index, offset, progress;
 let width, height;
@@ -38,29 +91,6 @@ let geoJsonToFit = {
   };
 
   $: projection = geoMercator().fitSize([width, height], geoJsonToFit);
-
-  let items_col2 = [
-    { label: 'Item 1', value: 85 },
-    { label: 'Item 2', value: 33 },
-    { label: 'Item 3', value: 20 },
-    { label: 'Item 4', value: 23 },
-    { label: 'Item 5', value: 15 },
-  ];
-
-  let isVisible1 = false;
-  let isVisible2 = false;
-
-  $: {
-    if (index === 1) {
-      isVisible1 = true;
-      isVisible2 = false;
-    } else if (index === 2) {
-      isVisible2 = true;
-      isVisible1 = false;
-    } else {
-      isVisible2 = false;
-    }
-  }
 
 </script>
 
@@ -292,6 +322,32 @@ let geoJsonToFit = {
   margin-top: 50px;
 }
 
+.Circles-container-equalsize{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  margin-top: 20px;
+  gap: 460px; 
+}
+
+.Circles-container-animated {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  margin-top: 20px;
+  gap: 460px; /* Add this line to create space between the circles */
+}
+
 </style>
 
 <Scroller
@@ -328,7 +384,7 @@ let geoJsonToFit = {
     </div>
     </div>
 
-    <div class="progress-bars">
+    <!-- <div class="progress-bars">
       <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress value={count ? (index + 1) / count : 0} />
 
@@ -337,17 +393,47 @@ let geoJsonToFit = {
 
       <p>total progress</p>
       <progress value={progress || 0} />
+    </div> -->
+
+    <div >
+      <progress class="progress-bars" value={progress || 0} />
     </div>
+
+    <section> <!-- section 7-->
+      <div class="Circles-container-equalsize">
+        {#if progress >= 0.79 && progress <= 0.82}
+          <StaticCircle circleColor="rgba(60, 60, 60, 0.5)" circleRadius="50" text="" />
+        {/if}
+        {#if progress >= 0.79 && progress <= 0.82}
+        <StaticCircle circleColor="rgba(128, 0, 255, 0.5)" circleRadius="50" text="" />
+        {/if}
+      </div>
+  
+      <div class="Circles-container-animated">
+        <div>
+          {#if progress && progress >= 0.82 && progress <= 0.93}
+            <ShrinkingCircle progress={progress - 0.82} initialRadius={50} circleColor="rgba(60, 60, 60, 0.5)" />
+          {/if}
+        </div>
+        <div>
+          {#if progress && progress >= 0.82 && progress <= 0.93}
+            <ExpandingCircle progress={progress - 0.82} initialRadius={50} circleColor="rgba(128, 0, 255, 0.5)" />
+          {/if}
+        </div>
+      </div>
+  
+    </section>
+
   </div>
 
   <div class="foreground" slot="foreground">
     
-    <section> <!-- first section -->
+    <section> <!-- zero section -->
       <Title />
     </section>
     
   
-    <section> <!--second section-->
+    <section> <!--first section-->
     
       <div class="propertyType1-container">
         <PropertyType {index} />
@@ -370,11 +456,11 @@ let geoJsonToFit = {
 
     <!-- <h4>Even in single mother households, 18% of property owners are men</h4> -->
 
-    <section> <!--third section-->
+    <section> <!--second section-->
   
     </section>
 
-    <section> <!-- fourth section -->
+    <section> <!-- third section -->
       <h2>Why is that? Are they financially different?</h2>
       <h2>Let's look into how they spend their remittances for example.</h2>
       <BasicNeedsCompare />
@@ -384,27 +470,68 @@ let geoJsonToFit = {
     </section>
 
     
-    <section>
+    <section> <!-- fourth section -->
 
-      <h3>How does migration fit into this narrative?</h3>
-      <h2>The Top5 reasons for these families to migrate are...</h2> 
+      <h2>However, in terms of housing, they become different</h2>
+      <h2>Biparental families are able to spend more in constructing or purchasing their own housing</h2>
+      <HousingCompare />
+      <!-- <ConditionalText progress="{progress}" minProgress="0.45" maxProgress="0.5" textColor='black' 
+      text="Although biparental households and single mother households spend similar fraction of their remittances on basic needs," /> -->
+      <h2>While single mothers need to rent</h2>
 
-      <div class="chart-container">
-        <Chart items={items_col2} />
+    </section>
+
+
+    <section> <!-- fifth section-->
+      
+      <h2>Biparental families are also able to spend more on business</h2>
+      <h2>They can accumulate more capital for basic needs, housing, or even migration</h2>
+      <BusinessCompare />
+      <!-- <ConditionalText progress="{progress}" minProgress="0.45" maxProgress="0.5" textColor='black' 
+      text="Although biparental households and single mother households spend similar fraction of their remittances on basic needs," /> -->
+      <h2>Single mothers are unable to do that, leading to a viscious cycle.</h2>
+
+    </section>
+
+    <section> <!-- sixth section-->
+      <!-- <Chart data1={data1} data2={data2} data3={data3} data4={data4} progress={progress*1.6}/>  -->
+    </section>
+
+    <section> <!-- seventh section-->
+      <Motivation/>   
+    </section>
+
+    <section> <!-- eigth section-->
+      <h2>Cost of migration versus awareness </h2>
+      <h2>For those who are aware of the migration cost beforehand, </h2>
+      <div class="text-columns">
+        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.86" textColor='black' text="The average cost is $2894" />
+        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.86" textColor='black' fontSize='22px' containerWidth="50%" text="Biparental hosueholds and sinlge mother households spend similar amount of money for migration" />
+        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.86" textColor='purple' text="The average cost is $3244" />
       </div>
-       
 
+      <div class="text-columns">
+      <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.86" textColor='black' text=" " />
+      <ConditionalText progress="{progress}" minProgress="0.82" maxProgress="0.86" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unware of the cost?" />
+      <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.86" textColor='purple' text=" " />
+      </div>
+    </section>
 
+    <section> <!-- ninth section-->
+      <h2>Discrepancy emerges</h2>
+      <div class="text-columns">
+        <ConditionalText progress="{progress}" minProgress="0.90" maxProgress="0.96" textColor='black' text="The average cost decreases to $2700" />
+        <ConditionalText progress="{progress}" minProgress="0.90" maxProgress="0.96" textColor='black' fontSize='22px' containerWidth="50%" text="Single mothers spend more" />
+        <ConditionalText progress="{progress}" minProgress="0.90" maxProgress="0.96" textColor='purple' text="The average cost increases to $8260" />
+      </div>
+      
     </section>
 
 
-    <section>
-      <h2>How does migration fit into this narrative?</h2>
-
+    <section> <!-- tenth section-->
+      <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
+      <Intermediary />
     </section>
-    <section>This is the seventh section.</section>
-    <section>This is the eight section.</section>
-  
   
   </div>
 
