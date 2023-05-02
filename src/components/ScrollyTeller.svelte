@@ -49,18 +49,88 @@ let chartWidth = 500;
 
 let container;
 
+let isVisible = false;
 let isVisible1 = false;
 let isVisible2 = false;
+let isVisible3 = false; //for background picture of basic needs
+let isVisible4 = false; //for background picture of housing
+let isVisible5 = false; //for background picture of business
+let isVisible7 = false; //for background picture of remittances
+let isVisible8 = false; //for background picture of caravan smuggler
 
   $: {
-    if (index === 1) {
+    if (index === 0) {
+      isVisible = true;
+      isVisible1 = false;
+      isVisible2 = false;
+      isVisible3 = false;
+      isVisible4 = false;
+      isVisible5 = false;
+      isVisible7 = false;
+      isVisible8 = false;
+    } else if (index === 1) {
+      isVisible = false;
       isVisible1 = true;
       isVisible2 = false;
+      isVisible3 = false;
+      isVisible4 = false;
+      isVisible5 = false;
+      isVisible7 = false;
+      isVisible8 = false;
     } else if (index === 2) {
-      isVisible2 = true;
+      isVisible = false;
       isVisible1 = false;
-    } else {
+      isVisible2 = true;
+      isVisible3 = false;
+      isVisible4 = false;
+      isVisible5 = false;
+      isVisible7 = false;
+      isVisible8 = false;
+    } else if (index === 3) {
+      isVisible = false;
+      isVisible1 = false;
       isVisible2 = false;
+      isVisible3 = true;
+      isVisible4 = false;
+      isVisible5 = false;
+      isVisible7 = false;
+      isVisible8 = false;
+    } else if (index === 4) {
+      isVisible = false;
+      isVisible1 = false;
+      isVisible2 = false;
+      isVisible3 = false;
+      isVisible4 = true;
+      isVisible5 = false;
+      isVisible7 = false;
+      isVisible8 = false;
+    } else if (index === 5) {
+      isVisible = false;
+      isVisible1 = false;
+      isVisible2 = false;
+      isVisible3 = false;
+      isVisible4 = false;
+      isVisible5 = true;
+      isVisible7 = false;
+      isVisible8 = false;
+    } else if (index === 7) {
+      isVisible = false;
+      isVisible1 = false;
+      isVisible2 = false;
+      isVisible3 = false;
+      isVisible4 = false;
+      isVisible5 = false;
+      isVisible7 = true;
+      isVisible8 = false;
+    } else {
+      isVisible = false;
+      isVisible1 = false;
+      isVisible2 = false;
+      isVisible3 = false;
+      isVisible4 = false;
+      isVisible5 = false;
+      isVisible7 = false;
+      isVisible8 = true;
     }
   }
 
@@ -226,7 +296,25 @@ let geoJsonToFit = {
   background-color: #f7f7f7;
 }
 
-/*
+.image {
+    width: 100%;
+    height: 100vh; /* check problem when setting width */
+    position: absolute;
+    opacity: 1;
+    visibility: hidden;
+    transition: opacity 2s, visibility 2s;
+  }
+
+.image.visible {
+    opacity: 0.2;
+    visibility: visible;
+    background-image: url('./mujerencampo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+  }
+
 .image1 {
     width: 100%;
     height: 100vh; 
@@ -239,12 +327,11 @@ let geoJsonToFit = {
 .image1.visible1 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./src/components/img/housing.jpeg');
+    background-image: url('./housing_est.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
   }
-*/
 
 .propertyType1-container {
   position: relative;
@@ -276,7 +363,6 @@ let geoJsonToFit = {
   margin-top: 0px;
 }
 
-/*
 .image2 {
     width: 100%;
     height: 100vh; 
@@ -289,12 +375,56 @@ let geoJsonToFit = {
 .image2.visible2 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./src/components/img/housing_sm.jpeg');
+    background-image: url('./housing_sm.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
   }
-*/
+
+  .image.visible7 {
+    opacity: 0.1;
+    visibility: visible;
+    background-image: url('./budgetspending.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .image.visible8 {
+    opacity: 0.1;
+    visibility: visible;
+    background-image: url('./caravan.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .image.visible3 {
+    opacity: 0.1;
+    visibility: visible;
+    background-image: url('./Food.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .image.visible4 {
+    opacity: 0.1;
+    visibility: visible;
+    background-image: url('./Housing.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .image.visible5 {
+    opacity: 0.1;
+    visibility: visible;
+    background-image: url('./Business.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
 .sexowners-container {
   display: flex;
@@ -348,6 +478,13 @@ let geoJsonToFit = {
   gap: 460px; /* Add this line to create space between the circles */
 }
 
+.text-columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
 </style>
 
 <Scroller
@@ -368,6 +505,12 @@ let geoJsonToFit = {
 
     <div class="image1" class:visible1={isVisible1} /> <!--background image for section 1-->
     <div class="image2" class:visible2={isVisible2} /> <!--background image for section 2-->
+    <div class="image" class:visible={isVisible} />
+    <div class="image" class:visible7={isVisible7} />
+    <div class="image" class:visible8={isVisible8} />
+    <div class="image" class:visible3={isVisible3} />
+    <div class="image" class:visible4={isVisible4} />
+    <div class="image" class:visible5={isVisible5} />
 
     <div class="sexowners-container">
       <div class="Sexownerbp">
