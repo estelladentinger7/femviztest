@@ -15,7 +15,7 @@ import ShrinkingCircle from './ShrinkingCircles.svelte';
 import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
 import HousingCompare from "./HousingCompare.svelte";
 import BusinessCompare from "./BusinessCompare.svelte";
-import Motivation from "./Edit.svelte";
+import Motivation from "./Motivation.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
 
@@ -271,6 +271,9 @@ let geoJsonToFit = {
   position: relative;
   width: 300px;
   height: 100px;
+  opacity: 1;
+  visibility: hidden;
+  transition: opactiy 2s, visibility 2s;
 }
 
 .overlay {
@@ -316,7 +319,7 @@ let geoJsonToFit = {
   }
   
 .image.visible1 {
-    opacity: 0.1;
+    opacity: 0.2;
     visibility: visible;
     background-image: url('./housing_est.jpeg');
     background-size: cover;
@@ -355,7 +358,7 @@ let geoJsonToFit = {
 }
   
 .image.visible2 {
-    opacity: 0.1;
+    opacity: 0.2;
     visibility: visible;
     background-image: url('./housing_sm.jpeg');
     background-size: cover;
@@ -364,7 +367,7 @@ let geoJsonToFit = {
   }
 
   .image.visible7 {
-    opacity: 0.1;
+    opacity: 0.2;
     visibility: visible;
     background-image: url('./budgetspending.png');
     background-size: cover;
@@ -373,7 +376,7 @@ let geoJsonToFit = {
   }
 
   .image.visible8 {
-    opacity: 0.1;
+    opacity: 0.2;
     visibility: visible;
     background-image: url('./caravan.png');
     background-size: cover;
@@ -382,7 +385,7 @@ let geoJsonToFit = {
   }
 
   .image.visible3 {
-    opacity: 0.1;
+    opacity: 0.2;
     visibility: visible;
     background-image: url('./Food.png');
     background-size: cover;
@@ -391,7 +394,7 @@ let geoJsonToFit = {
   }
 
   .image.visible4 {
-    opacity: 0.1;
+    opacity: 0.2;
     visibility: visible;
     background-image: url('./Housing.jpeg');
     background-size: cover;
@@ -400,7 +403,7 @@ let geoJsonToFit = {
   }
 
   .image.visible5 {
-    opacity: 0.1;
+    opacity: 0.2;
     visibility: visible;
     background-image: url('./Business.jpeg');
     background-size: cover;
@@ -493,8 +496,9 @@ let geoJsonToFit = {
     <!-- <div class="image" class:visible3={isVisible3} /> -->
     <div class="image" class:visible4={isVisible4} />
     <div class="image" class:visible5={isVisible5} />
-
-    <!-- <img src="./Food.png" alt="food" class="image" class:visible3={isVisible3} /> -->
+    <div class="image" class:visible3={isVisible3}>
+      <img src="./Food.png" alt="food"/>
+    </div>
 
     <div class="sexowners-container">
       <div class="Sexownerbp">
@@ -625,7 +629,7 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- seventh section-->
-      <Motivation/>   
+      <Motivation/> 
     </section>
 
     <section> <!-- eigth section-->
