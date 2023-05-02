@@ -15,7 +15,7 @@ import ShrinkingCircle from './ShrinkingCircles.svelte';
 import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
 import HousingCompare from "./HousingCompare.svelte";
 import BusinessCompare from "./BusinessCompare.svelte";
-import Motivation from "./Motivation.svelte";
+import Motivation from "./Edit.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
 
