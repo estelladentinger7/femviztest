@@ -50,8 +50,8 @@ let chartWidth = 500;
 let container;
 
 let isVisible = false;
-let isVisible1 = false;
-let isVisible2 = false;
+let isVisible1 = false; //for background picture of houses (property type)
+let isVisible2 = false; //for background picture of sm houses (property owner)
 let isVisible3 = false; //for background picture of basic needs
 let isVisible4 = false; //for background picture of housing
 let isVisible5 = false; //for background picture of business
@@ -314,18 +314,9 @@ let geoJsonToFit = {
     background-position: center center;
 
   }
-
-.image1 {
-    width: 100%;
-    height: 100vh; 
-    position: absolute;
-    opacity: 1;
-    visibility: hidden;
-    transition: opacity 2s, visibility 2s;
-  }
   
-.image1.visible1 {
-    opacity: 0.2;
+.image.visible1 {
+    opacity: 0.1;
     visibility: visible;
     background-image: url('./housing_est.jpeg');
     background-size: cover;
@@ -362,18 +353,9 @@ let geoJsonToFit = {
   padding: 0px;
   margin-top: 0px;
 }
-
-.image2 {
-    width: 100%;
-    height: 100vh; 
-    position: absolute;
-    opacity: 1;
-    visibility: hidden;
-    transition: opacity 2s, visibility 2s;
-  }
   
-.image2.visible2 {
-    opacity: 0.2;
+.image.visible2 {
+    opacity: 0.1;
     visibility: visible;
     background-image: url('./housing_sm.jpeg');
     background-size: cover;
@@ -503,14 +485,16 @@ let geoJsonToFit = {
       bind:clientHeight={height}
     >
 
-    <div class="image1" class:visible1={isVisible1} /> <!--background image for section 1-->
-    <div class="image2" class:visible2={isVisible2} /> <!--background image for section 2-->
+    <div class="image" class:visible1={isVisible1} /> <!--background image for section 1-->
+    <div class="image" class:visible2={isVisible2} /> <!--background image for section 2-->
     <div class="image" class:visible={isVisible} />
     <div class="image" class:visible7={isVisible7} />
     <div class="image" class:visible8={isVisible8} />
-    <div class="image" class:visible3={isVisible3} />
+    <!-- <div class="image" class:visible3={isVisible3} /> -->
     <div class="image" class:visible4={isVisible4} />
     <div class="image" class:visible5={isVisible5} />
+
+    <img src="./Food.png" alt="food" class="image" class:visible3={isVisible3} /> 
 
     <div class="sexowners-container">
       <div class="Sexownerbp">
@@ -637,7 +621,7 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- sixth section-->
-      <!-- <Chart data1={data1} data2={data2} data3={data3} data4={data4} progress={progress*1.6}/>  -->
+      <Chart data1={data1} data2={data2} data3={data3} data4={data4} progress={progress*1.6}/>
     </section>
 
     <section> <!-- seventh section-->
