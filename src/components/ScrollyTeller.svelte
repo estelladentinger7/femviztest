@@ -305,13 +305,13 @@ let geoJsonToFit = {
     position: absolute;
     opacity: 1;
     visibility: hidden;
-    transition: opacity 2s, visibility 2s;
+    transition: opacity 2s /*, visibility 2s; */
   }
 
 .image.visible {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./mujerencampo.png');
+    /* background-image: url('./mujerencampo.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -321,7 +321,7 @@ let geoJsonToFit = {
 .image.visible1 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./housing_est.jpeg');
+    /* background-image: url('./housing_est.jpeg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -360,7 +360,7 @@ let geoJsonToFit = {
 .image.visible2 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./housing_sm.jpeg');
+    /* background-image: url('./housing_sm.jpeg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -369,7 +369,7 @@ let geoJsonToFit = {
   .image.visible7 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./budgetspending.png');
+    /* background-image: url('./budgetspending.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -378,7 +378,7 @@ let geoJsonToFit = {
   .image.visible8 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./caravan.png');
+    /* background-image: url('./caravan.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -387,7 +387,7 @@ let geoJsonToFit = {
   .image.visible3 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./Food.png');
+    /* background-image: url('./Food.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -396,7 +396,7 @@ let geoJsonToFit = {
   .image.visible4 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./Housing.jpeg');
+    /* background-image: url('./Housing.jpeg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -405,7 +405,7 @@ let geoJsonToFit = {
   .image.visible5 {
     opacity: 0.2;
     visibility: visible;
-    background-image: url('./Business.jpeg');
+    /* background-image: url('./Business.jpeg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -488,16 +488,36 @@ let geoJsonToFit = {
       bind:clientHeight={height}
     >
 
-    <div class="image" class:visible1={isVisible1} /> <!--background image for section 1-->
-    <div class="image" class:visible2={isVisible2} /> <!--background image for section 2-->
-    <div class="image" class:visible={isVisible} />
-    <div class="image" class:visible7={isVisible7} />
-    <div class="image" class:visible8={isVisible8} />
-    <!-- <div class="image" class:visible3={isVisible3} /> -->
-    <div class="image" class:visible4={isVisible4} />
-    <div class="image" class:visible5={isVisible5} />
-    <div class="image" class:visible3={isVisible3}>
-      <img src="./Food.png" alt="food"/>
+    <div class="image" class:visible={isVisible}> <!-- background image for section 0-->
+      <img src="./mujerencampo.png" alt="mujer" style="width: 100%; height: 100vh"/>
+    </div>
+
+    <div class="image" class:visible1={isVisible1}> <!-- background image for section 1-->
+      <img src="./housing_est.jpeg" alt="housing" style="width: 100%; height: 100vh"/>
+    </div>
+
+    <div class="image" class:visible2={isVisible2}> <!-- background image for section 2-->
+      <img src="./housing_sm.jpeg" alt="housing_sm" style="width: 100%; height: 100vh"/>
+    </div>
+
+    <div class="image" class:visible3={isVisible3}> <!-- background image for section 3-->
+      <img src="./Food.png" alt="food" style="width: 100%; height: 100vh"/>
+    </div>
+
+    <div class="image" class:visible4={isVisible4}> <!-- background image for section 4-->
+      <img src="./Housing.jpeg" alt="housing" style="width: 100%; height: 100vh"/>
+    </div>
+
+    <div class="image" class:visible5={isVisible5}> <!-- background image for section 5-->
+      <img src="./Business.jpeg" alt="business" style="width: 100%; height: 100vh"/>
+    </div>
+
+    <div class="image" class:visible7={isVisible7}> <!-- background image for section 7-->
+      <img src="./budgetspending.png" alt="budget" style="width: 100%; height: 100vh"/>
+    </div>
+
+    <div class="image" class:visible8={isVisible8}> <!-- background image for section 8-->
+      <img src="./caravan.png" alt="caravan" style="width: 100%; height: 100vh"/>
     </div>
 
     <div class="sexowners-container">
