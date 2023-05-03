@@ -15,7 +15,7 @@ import ShrinkingCircle from './ShrinkingCircles.svelte';
 import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
 import HousingCompare from "./HousingCompare.svelte";
 import BusinessCompare from "./BusinessCompare.svelte";
-import Motivation from "./Motivation.svelte";
+import Motivation from "./BarChart.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
 
@@ -303,7 +303,7 @@ let geoJsonToFit = {
     width: 100%;
     height: 100vh; /* check problem when setting width */
     position: absolute;
-    opacity: 1;
+    opacity: 0.1;
     visibility: hidden;
     transition: opacity 2s /*, visibility 2s; */
   }
