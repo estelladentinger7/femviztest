@@ -9,8 +9,8 @@
 
 
 
-<h1>A Different Journey</h1>
-<h2>Migration through the lens of a single mother</h2>
+<h1>I REALLY HOPE THIS WORKS DUDE</h1>
+<h2>like, for real</h2>
 <h3>How different is the migration experience for Central Americans depending on their family type?</h3>     
 
 <br>
