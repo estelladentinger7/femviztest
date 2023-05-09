@@ -18,6 +18,7 @@ import BusinessCompare from "./BusinessCompare.svelte";
 import Motivation from "./BarChart.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
+import Textclick from "./textclick.svelte";
 
 const data1 = [
   { label: 'Item 1', value: 85 },
@@ -161,6 +162,7 @@ let geoJsonToFit = {
   };
 
   $: projection = geoMercator().fitSize([width, height], geoJsonToFit);
+  
 
 </script>
 
@@ -235,28 +237,25 @@ let geoJsonToFit = {
     visibility: visible;
   }
 
-  h4 {
-    text-align: center;
-    font-size: 2em;
-    color: gray;
-    font-style: italic;
-  }
-
   h5 {
-    text-align: center;
+    text-align: left;
     font-size: 1.5em;
-    color: gray;
+    color: black;
     font-style: italic;
   }
 
   .text {
     visibility: hidden;
-    margin-top: 5em;
+    margin-top: 10em;
   }
 
   .text2 {
     visibility: hidden;
-    margin-top: 2em;
+    margin-top: 5em;
+  }
+
+  .text-container {
+    visibility: hidden;
   }
 
   .text.visible2 {
@@ -420,20 +419,20 @@ let geoJsonToFit = {
 }
 
 .Sexownerbp {
-  width: 500px;
+  width: 450px;
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 150px;
+  padding: 100px;
   margin-top: 50px;
 }
 
 .Sexownersm {
-  width: 500px;
+  width: 450px;
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 150px;
+  padding: 100px;
   margin-top: 50px;
 }
 
@@ -525,10 +524,14 @@ let geoJsonToFit = {
         <Sexownerbp {index} />
       </div>
   
-    <div class="text">
+    <div class="text-container">
       <h5 class="text2" class:visible2={isVisible2} >Click to see the proportion of property ownership by sex.</h5>
-      <h4 class="text" class:visible2={isVisible2} >Even in single mother households, 18% of property owners are men</h4>
+      <!-- <h4 class="text" class:visible2={isVisible2} >Even in single mother households, 18% of property owners are men</h4> -->
+      <div class="text">
+        <Textclick {index} />
+      </div>
     </div>
+    
   
     <div class="Sexownersm">
       <Sexownersm {index} />
@@ -683,7 +686,8 @@ let geoJsonToFit = {
       <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
       <Intermediary />
     </section>
-  
+
+
   </div>
 
 </Scroller>

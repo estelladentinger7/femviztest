@@ -173,7 +173,9 @@
 
 <div class="sex" class:visible={isVisible} bind:this={container}>
   <h1>Single Mothers</h1>
+
 </div>
+
 
 <style>
   .sex {
@@ -192,6 +194,7 @@
 
   h1 {
     color: purple;
+    text-align: center;
   }
 
 </style>
