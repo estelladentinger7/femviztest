@@ -8,47 +8,58 @@
 </script>
 
 
-
-<h1>I REALLY HOPE THIS WORKS DUDE</h1>
-<h2>like, for real</h2>
-<h3>How different is the migration experience for Central Americans depending on their family type?</h3>     
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>A Different Journey</h1>
+<h2>Migration through the lens of a <strong>single mother</strong></h2>
 
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<div class="row">
-  <div class="col-6" style="float: left; width: 50%;">
-    <h2>Biparental Family</h2>
-    <div class="image-container" style="float: center">
-      <img src="./people-512.jpg" alt="hola1" style="width: 50%;" title="This is a tooltip."/> 
-      <div class="overlay"> 5 people family group (on avg.). Both parents are present.</div>
-    </div>
-  </div>
-  <div class="col-6" style="float: right; width: 50%;">
-    <h2>Single Mothers</h2>
-    <div class="image-container">
-       <img src="./people-512.jpg" alt="hola1" style="width: 50%;" title="This is a tooltip."/> 
-      <div class="overlay">4 people family group (on avg.). Only the mother is present, does not seek family reunification.</div>
-    </div>
-  </div>
-</div>
+<h3>An analysis of <strong>Central American Migration</strong> based on the survey developed by <strong>WFP and the International Organization for Migration (IOM).</strong></h3>     
+
+
 
 <style>
 
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;600&display=swap');
+
+
   h1 {
         text-align: center;
-        font-size: 3em;
+        font-size: 8.5em;
         margin-top: 1em;
-        margin-bottom: 0.1em;
+        margin-bottom: 0em;
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;
+        color: purple;
   }
 
   h2 {
         text-align: center;
-        font-size: 1.5em;
-        color: purple;
+        font-size: 2em;
+        color: black;
         margin-top: 0.1em;
-        margin-bottom: 0.3em;        
+        margin-bottom: 0.3em;
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+       
+                
   }
 
   h3 {
@@ -57,33 +68,16 @@
         color: gray;
         margin-top: 3em;
         margin-bottom: 1em; 
-        font-style: italic;       
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;       
   }
 
-.image-container {
-  position: relative;
-  width: 300px;
-  height: 100px;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  padding-top: 80px;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s ease-in-out;
-}
-
-.image-container:hover .overlay {
-  visibility: visible;
-  opacity: 1;
-}
+body {
+    background-image: url("./mujerencampo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 </style>
 
 

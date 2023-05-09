@@ -165,6 +165,38 @@ let geoJsonToFit = {
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,300;0,600;1,300&display=swap');
+  
+  .title_section {
+    height: 100vh;
+    width: 100%;
+    text-align: center ;
+    justify-content: center;
+    max-width: 100%; /* adjust at will */
+    position: relative; 
+    background-image: none;
+  }
+
+  .title_section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./mujerencampo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: hard-light ;
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+
+  
   .background {
     width: 100%;
     height: 100vh;
@@ -174,33 +206,43 @@ let geoJsonToFit = {
   }
 
   .foreground {
-    width: 50%;
-    margin: 0 auto;
-    height: auto;
-    position: relative;
-    /*outline: red solid 3px;*/
+    width: 70%;
+    position: relative; 
+    justify-content: center;
+    background-color:white;   
+    text-align: center;
+    left: 30%;
+    align-items: center;
   }
 
-  .progress-bars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 7px;
-    background: purple;
-    /*visibility: visible;  */
+  .foreground::before,
+  .foreground::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
   }
+
+  .foreground::before {
+  left: 0;
+  background-color: gray;
+  }
+
+  .foreground::after {
+  right: 0;
+  background-color: rgba(128,0,128, 1);
+  }
+
 
   section {
-    height: 70vh;
-    background-color: rgba(0, 0, 0, 0.01); 
-    /* color: white; */
-    /*outline: magenta solid 3px;*/
-    text-align: center;
-    max-width: 750px; /* adjust at will */
-    color: black;
+    /*height: 70vh; */
+    text-align: center ;
+    justify-content: center;
+    max-width: 80%; /* adjust at will */
     padding: 1em;
-    margin: 0 0 0 0;
+    left: 10%;
+    position: relative; 
   }
 
   h1 {
@@ -472,6 +514,14 @@ let geoJsonToFit = {
 
 </style>
 
+<div class = "title_section" bind:clientHeight={height}> 
+ 
+<Title />
+
+</div>
+
+
+
 <Scroller
   top={0.0}
   bottom={1}
@@ -481,12 +531,16 @@ let geoJsonToFit = {
   bind:offset
   bind:progress
 >
-  <div 
+
+
+<div 
       class="background" 
       slot="background"
       bind:clientWidth={width}
       bind:clientHeight={height}
     >
+
+  
 
     <div class="image" class:visible={isVisible}> <!-- background image for section 0-->
       <img src="./mujerencampo.png" alt="mujer" style="width: 100%; height: 100vh"/>
@@ -546,9 +600,7 @@ let geoJsonToFit = {
       <progress value={progress || 0} />
     </div> -->
 
-    <div >
-      <progress class="progress-bars" value={progress || 0} />
-    </div>
+    
 
     <section> <!-- section 7-->
       <div class="Circles-container-equalsize">
@@ -579,11 +631,8 @@ let geoJsonToFit = {
 
   <div class="foreground" slot="foreground">
     
-    <section> <!-- zero section -->
-      <Title />
-    </section>
     
-  
+
     <section> <!--first section-->
     
       <div class="propertyType1-container">
@@ -653,6 +702,9 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- eigth section-->
+      
+
+
       <h2>Cost of migration versus awareness </h2>
       <h2>For those who are aware of the migration cost beforehand, </h2>
       <div class="text-columns">
