@@ -192,5 +192,6 @@
 
   h1 {
     color: gray;
+    text-align: center;
   }
 </style>
