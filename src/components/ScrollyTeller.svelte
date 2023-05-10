@@ -19,6 +19,7 @@ import Motivation from "./BarChart.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
 import Textclick from "./textclick.svelte";
+import IntSankey from "./intermediaries_sankey.svelte";
 
 const data1 = [
   { label: 'Item 1', value: 85 },
@@ -736,7 +737,7 @@ let geoJsonToFit = {
 
     <section> <!-- tenth section-->
       <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
-      <Intermediary />
+      <IntSankey />
     </section>
 
 
