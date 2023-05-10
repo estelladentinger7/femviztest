@@ -15,9 +15,18 @@ import ShrinkingCircle from './ShrinkingCircles.svelte';
 import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
 import HousingCompare from "./HousingCompare.svelte";
 import BusinessCompare from "./BusinessCompare.svelte";
-import Motivation from "./BarChart.svelte";
+//import Motivation from "./AnimatedMotivation.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
+
+import AnimatedLineChart from './AnimatedMotivation.svelte';
+import dataset from './dataset.js';
+	
+let selectedSeries = dataset[0];
+	
+function select(series) {
+		selectedSeries = series
+	};
 
 const data1 = [
   { label: 'Item 1', value: 85 },
@@ -35,15 +44,7 @@ const data2 = [
     { label: 'Item 5', value: 15 },
 ];
 
-const data3 = [
-  { label: 'Item 1', value: 15 },
 
-];
-
-const data4 = [
-  { label: 'Item 1', value: 8 },
-
-];
 
 let chartWidth = 500;
 
@@ -457,6 +458,17 @@ let geoJsonToFit = {
     font-style: italic;
   }
 
+  p {
+        text-align: center;
+        font-size: 1em;
+        color: gray;
+        margin-top: 0em;
+        margin-bottom: 3em; 
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+        font-style: italic;       
+  }
+
   .text {
     visibility: hidden;
     margin-top: 5em;
@@ -641,6 +653,33 @@ let geoJsonToFit = {
     margin-bottom: 50px;
 }
 
+
+	
+
+	
+	nav {
+		display: flex;
+		gap: 1rem;
+    justify-content: space-between;
+	}
+	
+	nav button {
+		border: transparent;
+		background: transparent;
+		color: black;
+		border-radius: 2px;
+		cursor: pointer;
+		padding: 6px 10px;
+	}
+	
+	nav button.selected {
+		background: rgba(128,0,128, 1);
+		color: #fff;
+	}
+	
+	
+	
+
 </style>
 
 <div class = "title_section" bind:clientHeight={height}> 
@@ -824,11 +863,26 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- sixth section-->
-      <Chart data1={data1} data2={data2} data3={data3} data4={data4} progress={progress*1.3}  {index}/>
+      <Chart data1={data1} data2={data2} progress={progress*1.3}  {index}/>
     </section>
 
     <section> <!-- seventh section-->
-      <Motivation  {index}/> 
+      <header>
+        <h2>And the preparation begins by...</h2> 
+        <p>Click on each category to find out</p> 
+        <nav>
+          {#each dataset as series}
+            <button on:click|preventDefault={() => select(series)} class:selected={series == selectedSeries} style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">
+              {series.label}
+            </button>
+          {/each}
+        </nav>
+      </header>
+
+      <main>
+        <AnimatedLineChart points={selectedSeries.points}/>
+      </main>
+
     </section>
 
     <section> <!-- eigth section-->

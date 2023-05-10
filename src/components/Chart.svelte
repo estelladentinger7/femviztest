@@ -1,8 +1,6 @@
 <script>
   export let data1;
   export let data2;
-  export let data3;
-  export let data4;
   export let progress = 0;
 </script>
 
@@ -56,6 +54,8 @@
     </div>
   </div>
 </div>
+<br>
+<br>
 
 
 
@@ -142,13 +142,13 @@
 
 
   h2 {
-        text-align: center;
+    text-align: center;
         font-size: 2em;
-        color: purple;
+        color: black;
         margin-top: 0.1em;
-        margin-bottom: 0.3em; 
+        margin-bottom: 0.3em;
         font-family: 'Jost', sans-serif;
-        font-weight: 600;        
+        font-weight: 300;       
   }
 
   h3 {
