@@ -6,6 +6,8 @@
   export let progress = 0;
 </script>
 
+<br>
+<br>
 <h3>How does migration fit into this narrative?</h3>
 <h2>The Top5 reasons for these families to migrate are...</h2> 
 <br>
@@ -17,7 +19,7 @@
     <div class="chart_bp">
       {#each data1 as item}
         <div class="bar-container" style="width: {item.value + 50}px; justify-content: flex-end;">
-          <div class="bar_bp" style="width: {progress *item.value}px; height: 40px;"></div>
+          <div class="bar_bp" style="width: {progress *item.value}px; height: 50px;"></div>
           <div class="label_bp">{item.value}%</div>
         </div>
       {/each}
@@ -25,20 +27,21 @@
   </div>
 
   <div class="col-md-2" style="display: inline-block; width: 20%;">
-    <img src="./people-512.jpg" alt="hola1" style="width: 30%;"/> 
-    <p>Item 1</p>
-    <br>
-    <img src="./people-512.jpg" alt="hola1" style="width: 30%;"/> 
-    <p>Item 2</p>
-    <br>
-    <img src="./people-512.jpg" alt="hola1" style="width: 30%;"/> 
-    <p>Item 3</p>
-    <br>
-    <img src="./people-512.jpg" alt="hola1" style="width: 30%;"/> 
-    <p>Item 4</p>
-    <br>
-    <img src="./people-512.jpg" alt="hola1" style="width: 30%;"/> 
-    <p>Item 5</p>
+    <div class="item-container" style="justify-content: center;">
+      <p>To look for a<br><strong>better job</strong> </p>
+    </div>
+    <div class="item-container" style="justify-content: center;">
+      <p>To <strong>find</strong> a job</p>
+    </div>
+    <div class="item-container" style="justify-content: center;">
+      <p>To get money to <br> <strong>afford food</strong> </p>
+    </div>
+    <div class="item-container" style="justify-content: center;">
+      <p>To get money for <br> <strong> other basic needs</strong></p>
+    </div>
+    <div class="item-container" style="justify-content: center;">
+      <p>To send <strong>remittances</strong> back home</p>
+    </div>
   </div>
 
 
@@ -46,7 +49,7 @@
     <div class="chart_sm">
       {#each data2 as item}
         <div class="bar-container" style="width: {item.value + 50}px">
-          <div class="bar_sm" style="width: {progress*item.value}px; height: 40px;"></div>
+          <div class="bar_sm" style="width: {progress*item.value}px; height: 50px;"></div>
           <div class="label_sm">{item.value}%</div>
         </div>
       {/each}
@@ -55,41 +58,13 @@
 </div>
 
 
-<div class="container">
-<h3 >The key differences in reasons to stay are related to...</h3>
 
-<div class="row">
-  <div class="col-md-5" style="float: left; width: 40%; justify-content: flex-end;">
-    <div class="chart_bp">
-      {#each data3 as item}
-        <div class="bar-container" style="width: {item.value + 50}px; justify-content: flex-end;">
-          <div class="bar_bp" style="width: {progress * item.value}px; height: 40px;"></div>
-          <div class="label_bp">{item.value}%</div>
-        </div>
-      {/each}
-    </div>
-  </div>
-
-  <div class="col-md-2" style="display: inline-block; width: 20%;">
-    <img src="./people-512.jpg" alt="hola1" style="width: 30%;"/> 
-    <p>Item 1</p>
-  </div>
-
-  <div class="col-md-5" style="float: right; width: 40%;">
-    <div class="chart_sm">
-      {#each data4 as item}
-        <div class="bar-container" style="width: {item.value + 50}px">
-          <div class="bar_sm" style="width: {progress * item.value}px; height: 40px;"></div>
-          <div class="label_sm">{item.value}%</div>
-        </div>
-      {/each}
-    </div>
-  </div>
-</div>
-</div>
 
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;600&display=swap');
+
   .chart_sm {
     display: flex;
     flex-direction: column;
@@ -135,6 +110,8 @@
     top: 25%;
     transform: translateY(-50%);
     color: purple;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600; 
   }
 
   .label_bp {
@@ -143,6 +120,8 @@
     top: 25%;
     transform: translateY(-50%);
     color: gray;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600; 
   }
 
   .bar-container {
@@ -151,39 +130,45 @@
     position: relative;
   }
 
-  .container {
-  background-color: #f2f2f2;
-  padding: 20px;
-  border: 4px dashed #ccc;
-  font-size: 16px;
-  color: #333;
-  margin-top: 3em;
+  .item-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+    border: 2px solid rgba(128, 128, 128, 0);
+    height: 50px; 
+    
   }
+
 
   h2 {
         text-align: center;
-        font-size: 1.5em;
+        font-size: 2em;
         color: purple;
         margin-top: 0.1em;
-        margin-bottom: 0.3em;        
+        margin-bottom: 0.3em; 
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;        
   }
 
   h3 {
         text-align: center;
-        font-size: 1em;
+        font-size: 1.5em;
         color: gray;
         margin-top: 1em;
-        margin-bottom: 1em; 
-        font-style: italic;       
+        margin-bottom: 0.1em;  
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;      
   }
 
   p {
         text-align: center;
-        font-size: 0.8em;
-        color: gray;
+        font-size: 1em;
+        color: black;
         margin-top: 0em;
         margin-bottom: 0em; 
-        font-style: italic;
+        font-family: 'Jost', sans-serif;
+        font-weight: 300; 
         
   
   }
