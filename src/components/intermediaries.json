@@ -1,0 +1,31 @@
+{
+    "nodes": [
+        {"name":"Single Mother Households"}, 
+        {"name":"Biparental Households"},
+        {"name":"Below 50%"},
+        {"name":"Above 50%"}
+        
+        ],
+    "links": [
+      {
+        "source": 0,
+        "target": 2,
+        "value": 58
+      },
+      {
+        "source": 0,
+        "target": 3,
+        "value": 42
+      },
+      {
+        "source": 1,
+        "target": 2,
+        "value": 76
+      },
+      {
+        "source": 1,
+        "target": 3,
+        "value": 24
+      }
+    ]
+ }
