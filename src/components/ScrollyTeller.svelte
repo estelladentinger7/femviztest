@@ -54,6 +54,7 @@ let container;
 
 // controling financial plots
 let selectedGraph = 'food';
+let currentText = ''
 
 function select_graph(graph) {
   selectedGraph = graph;
@@ -871,6 +872,7 @@ let geoJsonToFit = {
       {#if selectedGraph === 'food'}
         <div transition:fade>
           <Food30days />
+
         </div>
       {/if}
 
