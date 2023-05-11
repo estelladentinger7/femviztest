@@ -26,7 +26,7 @@
         let text = group.append('text')
             .attr('x', 1)
             .attr('y', 5)
-            .text('Women share property ownership in 10% of biparental households compared to 2% in single mother households');
+            .text('Women and men share property ownership in 10% of biparental households compared to 2% in single mother households');
 
         window.addEventListener('click', () => {
         count++;
@@ -63,12 +63,8 @@
   
   <style>
     .sex {
-      width: 450px;
-      height: 100vh;
-      position: absolute;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 2s, visibility 2s;
     }
   
     .sex.visible {

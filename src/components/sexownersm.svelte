@@ -172,15 +172,15 @@
 </script>
 
 <div class="sex" class:visible={isVisible} bind:this={container}>
-  <h1>Single Mothers</h1>
+  <h1>Single Mother Families</h1>
 
 </div>
 
 
 <style>
   .sex {
-    width: 100%;
-    height: 100vh;
+    width: 300px;
+    height: 100px;
     position: relative;
     opacity: 0;
     visibility: hidden;

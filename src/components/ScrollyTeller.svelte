@@ -133,7 +133,7 @@ let show_label = false;
       isVisible7 = true;
       isVisible8 = false;
       show_label = true;
-    } else {
+    } else if (index === 8) {
       isVisible = false;
       isVisible1 = false;
       isVisible2 = false;
@@ -471,20 +471,21 @@ let geoJsonToFit = {
   }
 
   .text {
-    visibility: hidden;
-    margin-top: 5em;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 3em;
+    margin-bottom: 1em; 
+    font-family: 'Jost', sans-serif;
+    font-weight: 300; 
   }
 
   .text2 {
-    visibility: hidden;
-    margin-top: 2em;
+    margin-top: 0em;
   }
 
   .text.visible2 {
-    visibility: visible;
-  }
-
-  .text2.visible2 {
     visibility: visible;
   }
 
@@ -600,25 +601,26 @@ let geoJsonToFit = {
   position: relative;
   justify-content: space-between;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 500px;
 }
 
 .Sexownerbp {
-  width: 500px;
+  width: 450px;
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 150px;
-  margin-top: 50px;
+  padding: 50px;
+  margin-top: 0px;
 }
 
 .Sexownersm {
-  width: 500px;
+  width: 450px;
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 150px;
-  margin-top: 50px;
+  padding: 50px;
+  margin-top: 0px;
 }
 
 .Circles-container-equalsize{
@@ -722,12 +724,23 @@ let geoJsonToFit = {
       <h4>Important <strong>take away</strong> of this section </h4>
     </div>
 
+    <div class="takeaway_box" class:showing={isVisible2} >
+      <div class="text">
+      <b> Click to see the proportion of property ownership by sex</b>
+    </div>
+      <h4> <Textclick {index} /> <h4>
+    </div>
+
     <div class="takeaway_box" class:showing={isVisible3} > 
       <h4>Another important <strong>take away</strong>, but for this section </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
       <h4>Same <strong>stuff</strong>, like yeah </h4>
+    </div>
+
+    <div class="takeaway_box" class:showing={isVisible8} >
+      <h4>Of the families who spent remittances on intermediaries, <b>42%</b> of single mother households spent <b>over half</b> of their remittances on intermediaries, compared to only <b>24%</b> of biparental households</h4>
     </div>
 
 
@@ -763,20 +776,7 @@ let geoJsonToFit = {
       <img src="./caravan.png" alt="caravan" style="width: 100%; height: 100vh"/>
     </div>
 
-    <div class="sexowners-container">
-      <div class="Sexownerbp">
-        <Sexownerbp {index} />
-      </div>
   
-    <div class="text">
-      <h5 class="text2" class:visible2={isVisible2} >Click to see the proportion of property ownership by sex.</h5>
-      <h4 class="text" class:visible2={isVisible2} >Even in single mother households, 18% of property owners are men</h4>
-    </div>
-  
-    <div class="Sexownersm">
-      <Sexownersm {index} />
-    </div>
-    </div>
 
     <!-- <div class="progress-bars">
       <p>current section: <strong>{index + 1}/{count}</strong></p>
@@ -805,7 +805,9 @@ let geoJsonToFit = {
     
     <section> <!--first section-->
 
-      <div class="propertyType1-container">
+
+
+      <!-- <div class="propertyType1-container">
         <PropertyType {index} />
       </div>
 
@@ -820,13 +822,31 @@ let geoJsonToFit = {
       <div class="propertyTypesm">
         <PropertyTypesm {index} />
         </div>
-      </div>
+      </div> -->
 
     </section> 
 
-    <!-- <h4>Even in single mother households, 18% of property owners are men</h4> -->
-
     <section> <!--second section-->
+
+      <h4>Single mother families are less likely to own their home than biparental families. Of families who own their home, let's look at who owns the property across both family types.</h4>
+      <h4>Are women less likely to be property owners?</h4>
+      <div class="sexowners-container">
+        <div class="Sexownerbp">
+          <Sexownerbp {index} />
+        </div>
+     
+      <div class="text">
+        <div class="text-container">
+        <!-- <h5 class="text2">Click to see the proportion of property ownership by sex.</h5> -->
+        <!-- <h4 class="text">Even in single mother households, 18% of property owners are men</h4> -->
+
+      </div>
+    </div>
+    
+      <div class="Sexownersm">
+        <Sexownersm {index} />
+      </div>
+      </div>
   
     </section>
 
@@ -919,8 +939,12 @@ let geoJsonToFit = {
 
 
     <section> <!-- tenth section-->
-      <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
-      <IntSankey />
+      <h2>We see that single mother households have a higher <b>cost of knowledge</b></h2>
+      <IntSankey/>
+    </section>
+
+    <section>
+      
     </section>
   
   </div>
