@@ -56,8 +56,7 @@ let isVisible2 = false; //for background picture of sm houses (property owner)
 let isVisible3 = false; //for background picture of basic needs
 let isVisible4 = false; //for background picture of housing
 let isVisible5 = false; //for background picture of business
-let isVisible7 = false; //for background picture of remittances
-let isVisible8 = false; //for background picture of caravan smuggler
+let isVisible6 = false; //for background picture of remittances
 
 let show_label = false;
 
@@ -69,8 +68,7 @@ let show_label = false;
       isVisible3 = false;
       isVisible4 = false;
       isVisible5 = false;
-      isVisible7 = false;
-      isVisible8 = false;
+      isVisible6 = false;
       show_label = false;
     } else if (index === 1) {
       isVisible = false;
@@ -79,8 +77,7 @@ let show_label = false;
       isVisible3 = false;
       isVisible4 = false;
       isVisible5 = false;
-      isVisible7 = false;
-      isVisible8 = false;
+      isVisible6 = false;
       show_label = true;
     } else if (index === 2) {
       isVisible = false;
@@ -89,8 +86,7 @@ let show_label = false;
       isVisible3 = false;
       isVisible4 = false;
       isVisible5 = false;
-      isVisible7 = false;
-      isVisible8 = false;
+      isVisible6 = false;
       show_label = true;
     } else if (index === 3) {
       isVisible = false;
@@ -99,8 +95,7 @@ let show_label = false;
       isVisible3 = true;
       isVisible4 = false;
       isVisible5 = false;
-      isVisible7 = false;
-      isVisible8 = false;
+      isVisible6 = false;
       show_label = true;
     } else if (index === 4) {
       isVisible = false;
@@ -109,8 +104,7 @@ let show_label = false;
       isVisible3 = false;
       isVisible4 = true;
       isVisible5 = false;
-      isVisible7 = false;
-      isVisible8 = false;
+      isVisible6 = false;
       show_label = true;
     } else if (index === 5) {
       isVisible = false;
@@ -119,8 +113,16 @@ let show_label = false;
       isVisible3 = false;
       isVisible4 = false;
       isVisible5 = true;
-      isVisible7 = false;
-      isVisible8 = false;
+      isVisible6 = false;
+      show_label = true;
+    } else if (index === 6) {
+      isVisible = false;
+      isVisible1 = false;
+      isVisible2 = false;
+      isVisible3 = false;
+      isVisible4 = false;
+      isVisible5 = false;
+      isVisible6 = true;
       show_label = true;
     } else if (index === 7) {
       isVisible = false;
@@ -129,9 +131,8 @@ let show_label = false;
       isVisible3 = false;
       isVisible4 = false;
       isVisible5 = false;
-      isVisible7 = true;
-      isVisible8 = false;
-      show_label = true;
+      isVisible6 = false;
+      show_label = false;
     } else {
       isVisible = false;
       isVisible1 = false;
@@ -139,8 +140,7 @@ let show_label = false;
       isVisible3 = false;
       isVisible4 = false;
       isVisible5 = false;
-      isVisible7 = false;
-      isVisible8 = true;
+      isVisible6 = false;
       show_label = false;
     }
   }
@@ -259,7 +259,7 @@ let geoJsonToFit = {
   .motiv_labels {
   position: absolute;
   top: 3%;
-  left: 19.5%;
+  left: 18%;
   background-color: gray;
   padding: 5px;
   font-family: 'Jost', sans-serif;
@@ -282,7 +282,7 @@ let geoJsonToFit = {
   color: white;
   }
 
-  .motiv_labels.highlighted {
+  .prep_labels.highlighted {
     background-color: rgba(128,0,128, 1);
   }
 
@@ -298,6 +298,21 @@ let geoJsonToFit = {
   }
 
   .costs_labels.highlighted {
+    background-color: rgba(128,0,128, 1);
+  }
+
+  .int_labels {
+  position: absolute;
+  top: 19%;
+  left: 2%;
+  background-color: gray;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  }
+
+  .int_labels.highlighted {
     background-color: rgba(128,0,128, 1);
   }
 
@@ -711,22 +726,35 @@ let geoJsonToFit = {
 
 
     <div class="livingcond_labels" class:highlighted={isVisible1} > Living conditions </div>
-    <div class="rem_labels" class:highlighted={isVisible3}> Remittances </div>
-    <div class="motiv_labels" class:highlighted={isVisible5}> Motivations </div>
-    <div class="prep_labels" class:highlighted={isVisible7} > Preparation </div>
-    <div class="costs_labels" class:highlighted={isVisible8} > Cost of Migration </div>
+    <div class="rem_labels" class:highlighted={isVisible2}> Finances </div>
+    <div class="motiv_labels" class:highlighted={isVisible3}> Motivations </div>
+    <div class="prep_labels" class:highlighted={isVisible4} > Preparation </div>
+    <div class="costs_labels" class:highlighted={isVisible5} > Cost of Migration </div>
+    <div class="int_labels" class:highlighted={isVisible6} > Intermediaries </div>
 
 
     <div class="takeaway_box" class:showing={isVisible1} > 
-      <h4>Important <strong>take away</strong> of this section </h4>
+      <h4>ONE - Important <strong>take away</strong> of this section </h4>
+    </div>
+
+    <div class="takeaway_box" class:showing={isVisible2} > 
+      <h4>TWO - Another important <strong>take away</strong>, but for this section </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible3} > 
-      <h4>Another important <strong>take away</strong>, but for this section </h4>
+      <h4>THREE - Same <strong>stuff</strong>, like yeah </h4>
+    </div>
+
+    <div class="takeaway_box" class:showing={isVisible4} > 
+      <h4>FOUR - Same <strong>stuff</strong>, like yeah </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
-      <h4>Same <strong>stuff</strong>, like yeah </h4>
+      <h4>FIVE - Same <strong>stuff</strong>, like yeah </h4>
+    </div>
+
+    <div class="takeaway_box" class:showing={isVisible6} > 
+      <h4>SIX - Same <strong>stuff</strong>, like yeah </h4>
     </div>
 
 
@@ -747,20 +775,17 @@ let geoJsonToFit = {
     </div>
 
     <div class="image" class:visible4={isVisible4}> <!-- background image for section 4-->
-      <img src="./Housing.jpeg" alt="housing" style="width: 100%; height: 100vh"/>
+      <img src="./housing_sm.jpeg" alt="caravan" style="width: 100%; height: 100vh"/>
     </div>
 
     <div class="image" class:visible5={isVisible5}> <!-- background image for section 5-->
       <img src="./Business.jpeg" alt="business" style="width: 100%; height: 100vh"/>
     </div>
 
-    <div class="image" class:visible7={isVisible7}> <!-- background image for section 7-->
+    <div class="image" class:visible7={isVisible6}> <!-- background image for section 7-->
       <img src="./budgetspending.png" alt="budget" style="width: 100%; height: 100vh"/>
     </div>
 
-    <div class="image" class:visible8={isVisible8}> <!-- background image for section 8-->
-      <img src="./caravan.png" alt="caravan" style="width: 100%; height: 100vh"/>
-    </div>
 
     <div class="sexowners-container">
       <div class="Sexownerbp">
@@ -768,8 +793,8 @@ let geoJsonToFit = {
       </div>
   
     <div class="text">
-      <h5 class="text2" class:visible2={isVisible2} >Click to see the proportion of property ownership by sex.</h5>
-      <h4 class="text" class:visible2={isVisible2} >Even in single mother households, 18% of property owners are men</h4>
+      <h5 class="text2" class:visible2={isVisible1} >Click to see the proportion of property ownership by sex.</h5>
+      <h4 class="text" class:visible2={isVisible1} >Even in single mother households, 18% of property owners are men</h4>
     </div>
   
     <div class="Sexownersm">
@@ -800,7 +825,7 @@ let geoJsonToFit = {
     <div class="sm_label" class:visible1={show_label}> Single Mothers </div>
 
     
-    <section> </section>
+    <section> </section> <!--zero section-->
     
     <section> <!--first section-->
 
@@ -825,21 +850,15 @@ let geoJsonToFit = {
 
     <!-- <h4>Even in single mother households, 18% of property owners are men</h4> -->
 
-    <section> <!--second section-->
-  
-    </section>
 
-    <section> <!-- third section -->
+    <section> <!-- second section -->
       <h2>Why is that? Are they financially different?</h2>
       <h2>Let's look into how they spend their remittances for example.</h2>
       <BasicNeedsCompare />
       <!-- <ConditionalText progress="{progress}" minProgress="0.45" maxProgress="0.5" textColor='black' 
       text="Although biparental households and single mother households spend similar fraction of their remittances on basic needs," /> -->
       <h2>Biparental households and single mother households spend similar fraction of their remittances on basic needs</h2>
-    </section>
 
-    
-    <section> <!-- fourth section -->
 
       <h2>However, in terms of housing, they become different</h2>
       <h2>Biparental families are able to spend more in constructing or purchasing their own housing</h2>
@@ -848,10 +867,6 @@ let geoJsonToFit = {
       text="Although biparental households and single mother households spend similar fraction of their remittances on basic needs," /> -->
       <h2>While single mothers need to rent</h2>
 
-    </section>
-
-
-    <section> <!-- fifth section-->
       
       <h2>Biparental families are also able to spend more on business</h2>
       <h2>They can accumulate more capital for basic needs, housing, or even migration</h2>
@@ -862,11 +877,13 @@ let geoJsonToFit = {
 
     </section>
 
-    <section> <!-- sixth section-->
+    <section> <!-- third section-->
       <Chart data1={data1} data2={data2} progress={progress*1.3}  {index}/>
+    
+    
     </section>
 
-    <section> <!-- seventh section-->
+    <section> <!-- forth section-->
       <header>
         <h2>And the preparation begins by...</h2> 
         <p>Click on each category to find out</p> 
@@ -885,7 +902,7 @@ let geoJsonToFit = {
 
     </section>
 
-    <section> <!-- eigth section-->
+    <section> <!-- fifth section-->
       
 
 
@@ -902,11 +919,7 @@ let geoJsonToFit = {
       <ConditionalText progress="{progress}" minProgress="0.82" maxProgress="0.86" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unware of the cost?" />
       <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.86" textColor='purple' text=" " />
       </div>
-    </section>
 
-    
-
-    <section> <!-- ninth section-->
       <h2>Discrepancy emerges</h2>
       <div class="text-columns">
         <ConditionalText progress="{progress}" minProgress="0.90" maxProgress="0.96" textColor='black' text="The average cost decreases to $2700" />
@@ -917,12 +930,19 @@ let geoJsonToFit = {
     </section>
 
 
-    <section> <!-- tenth section-->
+    <section> <!-- sixth section-->
       <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
       <Intermediary />
     </section>
+
+    <section> </section> <!--end section-->
   
   </div>
 
 </Scroller>
+<div class = "title_section" bind:clientHeight={height}> 
+ 
+<Title />
+  
+</div>
 
