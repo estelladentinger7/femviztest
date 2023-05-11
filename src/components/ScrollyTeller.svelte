@@ -756,10 +756,13 @@ let geoJsonToFit = {
 
     <div class="takeaway_box" class:showing={isVisible2} > 
       <h4>TWO - Another important <strong>take away</strong>, but for this section </h4>
+
     </div>
 
     <div class="takeaway_box" class:showing={isVisible3} > 
-      <h4>The motivations behind migration are very similar for biparental families and single mothers, but differences appear in <strong> how both groups prepare.</strong> </h4>
+      {#if selectedGraph === 'bank'}
+        <h4>bank takeaway</h4>
+      {/if}
     </div>
 
     <div class="takeaway_box" class:showing={isVisible4} > 
@@ -820,7 +823,7 @@ let geoJsonToFit = {
     </div>
     </div>
 
-    <div class="progress-bars">
+    <!-- <div class="progress-bars">
       <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress value={count ? (index + 1) / count : 0} />
 
@@ -829,7 +832,7 @@ let geoJsonToFit = {
 
       <p>total progress</p>
       <progress value={progress || 0} />
-    </div>
+    </div> -->
 
   
 
@@ -966,13 +969,13 @@ let geoJsonToFit = {
       <h2>For those who are aware of the migration cost beforehand, </h2>
       <div class="text-columns">
         <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' text="The average cost is $2894" />
-        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Biparental hosueholds and sinlge mother households spend similar amount of money for migration" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Biparental households and single mother households spend similar amount of money for migration" />
         <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='purple' text="The average cost is $3244" />
       </div>
 
       <div class="text-columns2">
       <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='black' text=" " />
-      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unware of the cost?" />
+      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unaware of the cost beforehand?" />
       <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='purple' text=" " />
       </div>
 
