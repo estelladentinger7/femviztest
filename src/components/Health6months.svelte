@@ -35,7 +35,7 @@
   var Data = [BIP,SM];
 
   var layout = {
-  title: 'Fraction (%) of Household Spending on Health in the Past 6 Months',
+  title: '<b>Fraction (%) of Household Spending on Health in the Past 6 Months',
   font: {
     family: "'Jost', sans-serif"},
   xaxis: {title: 'Fraction Segment of Household Spending (Left Inlcusive)'},
@@ -62,7 +62,21 @@
   showlegend: true,
   barmode: 'group',
   bargap: 0.15,
-  bargroupgap: 0.1
+  bargroupgap: 0.1,
+  annotations: [
+    {
+        text: 'Hover over the graph to see more details',
+        showarrow: false,
+        xref: 'paper',
+        yref: 'paper',
+        x: 0.38,
+        y: 1.04, // you might need to adjust this
+        xanchor: 'left',
+        yanchor: 'bottom',
+        font: {
+            size: 16}
+    }
+  ]
   };
 
   onMount(async () => {

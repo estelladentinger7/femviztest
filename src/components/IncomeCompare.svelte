@@ -9,7 +9,7 @@
   let data = [];
   
   let layout = {
-    title: 'Average Monthly Income by Family Type<br>Hover to see the number of families in each income group',
+    title: '<b>Average Monthly Income by Family Type',
     font: {
     family: "'Jost', sans-serif"},
     xaxis: { title: 'Average Monthly Income' },
@@ -43,6 +43,9 @@
       text: 'Biparental families have longer tail in the income range',
       showarrow: true,
       arrowhead: 7,
+      font: {
+          size: 14
+        },
       ax: 0,
       ay: -40
     },
@@ -54,10 +57,25 @@
       text: 'Single mother households are more concentrated in the lower income range',
       showarrow: true,
       arrowhead: 7,
+      font: {
+          size: 14
+        },
       ax: 0,
       ay: -40,
       arrowcolor: 'rgba(128,0,128,1)',
       // align: 'left',
+    },
+    {
+        text: 'Hover over the graph to see more details',
+        showarrow: false,
+        xref: 'paper',
+        yref: 'paper',
+        x: 0.38,
+        y: 1.04, // you might need to adjust this
+        xanchor: 'left',
+        yanchor: 'bottom',
+        font: {
+            size: 16}
     }
   ]
   };

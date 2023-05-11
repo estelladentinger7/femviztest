@@ -679,8 +679,6 @@ let geoJsonToFit = {
 
 
 	
-
-	
 	nav {
 		display: flex;
 		gap: 1rem;
@@ -822,8 +820,7 @@ let geoJsonToFit = {
       <progress value={progress || 0} />
     </div> -->
 
-    
-
+  
 
 
   </div>

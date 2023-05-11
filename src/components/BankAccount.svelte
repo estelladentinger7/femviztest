@@ -9,12 +9,20 @@
       justify-content: space-around;
     }
     .sunburst-title {
-      font-size: 24px;
-      /* font-weight: bold; */
-      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
       margin-top: 50px;
       font-family: 'Jost', sans-serif;
     }
+    .sunburst-subtitle {
+      font-size: 16px;
+      /* font-weight: bold; */
+      margin-bottom: 0px;
+      margin-top: 10px;
+      font-family: 'Jost', sans-serif;
+    }
+
   </style>
 </svelte:head>
 
@@ -100,6 +108,7 @@ var dataBIP = [{
 </script>
 
 <div class="sunburst-title">Bank Account Ownership by Sex for Each Family Type</div>
+<div class="sunburst-subtitle">Click on the graph to see more details</div>
 <div class="sunburst-container">
   <div bind:this={myDiv1} class="sunburst-diagram"></div>
   <div bind:this={myDiv2} class="sunburst-diagram"></div>
