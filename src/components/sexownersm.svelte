@@ -103,7 +103,7 @@
       .append('g')
       .attr('transform', `translate(${width / 4 + 12}, 10)`)
       .attr('text-anchor', 'start')
-      .style('font-size', '14px');
+      .style('font-size', '20px');
 
     group.append('circle')
       .attr('cx', 0)
@@ -114,7 +114,8 @@
     group.append('text')
       .attr('x', 16)
       .attr('y', 5)
-      .text('Both');
+      .text('Both')
+      .style('font-family','Jost');
 
     const group2 = select(container)
       .append('svg')
@@ -125,7 +126,7 @@
       .append('g')
       .attr('transform', `translate(${width / 4 + 12}, 10)`)
       .attr('text-anchor', 'start')
-      .style('font-size', '14px');
+      .style('font-size', '20px');
 
     group2.append('circle')
       .attr('cx', 0)
@@ -136,7 +137,8 @@
     group2.append('text')
       .attr('x', 16)
       .attr('y', 5)
-      .text('Man');
+      .text('Man')
+      .style('font-family','Jost');
 
     const group3 = select(container)
       .append('svg')
@@ -147,7 +149,7 @@
       .append('g')
       .attr('transform', `translate(${width / 4 + 12}, 10)`)
       .attr('text-anchor', 'start')
-      .style('font-size', '14px');
+      .style('font-size', '20px');
 
     group3.append('circle')
       .attr('cx', 0)
@@ -158,12 +160,13 @@
     group3.append('text')
       .attr('x', 16)
       .attr('y', 5)
-      .text('Woman');
+      .text('Woman')
+      .style('font-family','Jost');
   });
 
   let isVisible = false;
 
-  $: if (index === 2) {
+  $: if (index === 1) {
     isVisible = true;
   } else {
     isVisible = false;
@@ -178,9 +181,11 @@
 
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,300;0,600;1,300&display=swap');
+
   .sex {
-    width: 100%;
-    height: 100vh;
+    width: 250px;
+    height: 10px;
     position: relative;
     opacity: 0;
     visibility: hidden;
@@ -195,6 +200,8 @@
   h1 {
     color: purple;
     text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
   }
 
 </style>
