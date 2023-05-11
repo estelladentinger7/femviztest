@@ -8,16 +8,19 @@ import PropertyTypesm from './propertyTypesm.svelte';
 import PropertyTypebp from './propertyTypebp.svelte';
 import Sexownerbp from './sexownerbp.svelte';
 import Sexownersm from './sexownersm.svelte';
-import DensityPlot from "./DensityPlot.svelte";
 import StaticCircle from "./StaticCircle.svelte";
 import ExpandingCircle from "./ExpandingCircles.svelte";
 import ShrinkingCircle from './ShrinkingCircles.svelte';
 import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
 import HousingCompare from "./HousingCompare.svelte";
 import BusinessCompare from "./BusinessCompare.svelte";
-//import Motivation from "./AnimatedMotivation.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
+import Food30days from "./Food30days.svelte";
+import Incomecompare from "./IncomeCompare.svelte";
+import Bankaccount from "./BankAccount.svelte";
+import Health6months from "./Health6months.svelte";
+import { fade } from 'svelte/transition';
 
 import AnimatedLineChart from './AnimatedMotivation.svelte';
 import dataset from './dataset.js';
@@ -45,10 +48,16 @@ const data2 = [
 ];
 
 
-
 let chartWidth = 500;
 
 let container;
+
+// controling financial plots
+let selectedGraph = 'food';
+
+function select_graph(graph) {
+  selectedGraph = graph;
+}
 
 let isVisible = false;
 let isVisible1 = false; //for background picture of houses (property type)
@@ -853,27 +862,40 @@ let geoJsonToFit = {
 
     <section> <!-- second section -->
       <h2>Why is that? Are they financially different?</h2>
-      <h2>Let's look into how they spend their remittances for example.</h2>
-      <BasicNeedsCompare />
-      <!-- <ConditionalText progress="{progress}" minProgress="0.45" maxProgress="0.5" textColor='black' 
-      text="Although biparental households and single mother households spend similar fraction of their remittances on basic needs," /> -->
-      <h2>Biparental households and single mother households spend similar fraction of their remittances on basic needs</h2>
-
-
-      <h2>However, in terms of housing, they become different</h2>
-      <h2>Biparental families are able to spend more in constructing or purchasing their own housing</h2>
-      <HousingCompare />
-      <!-- <ConditionalText progress="{progress}" minProgress="0.45" maxProgress="0.5" textColor='black' 
-      text="Although biparental households and single mother households spend similar fraction of their remittances on basic needs," /> -->
-      <h2>While single mothers need to rent</h2>
-
+      <p>Click on each category to see families' financial situations</p> 
       
-      <h2>Biparental families are also able to spend more on business</h2>
-      <h2>They can accumulate more capital for basic needs, housing, or even migration</h2>
-      <BusinessCompare />
-      <!-- <ConditionalText progress="{progress}" minProgress="0.45" maxProgress="0.5" textColor='black' 
-      text="Although biparental households and single mother households spend similar fraction of their remittances on basic needs," /> -->
-      <h2>Single mothers are unable to do that, leading to a viscious cycle.</h2>
+      <nav>
+        <button on:click|preventDefault="{() => select_graph('food')}" class:selected={selectedGraph === 'food'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Food</button>
+        <button on:click|preventDefault="{() => select_graph('health')}" class:selected={selectedGraph === 'health'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Health</button>
+        <button on:click|preventDefault="{() => select_graph('bank')}" class:selected={selectedGraph === 'bank'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Bank Account Onwership</button>
+        <button on:click|preventDefault="{() => select_graph('income')}" class:selected={selectedGraph === 'income'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Income Comparison</button>
+      </nav>
+
+      {#if selectedGraph === 'food'}
+        <div transition:fade>
+          <Food30days />
+        </div>
+      {/if}
+
+      {#if selectedGraph === 'health'}
+        <div transition:fade>
+          <Health6months />
+        </div>
+      {/if}
+
+      {#if selectedGraph === 'bank'}
+        <div transition:fade>
+          <Bankaccount />
+        </div>
+      {/if}
+      
+      {#if selectedGraph === 'income'}
+        <div transition:fade>
+          <Incomecompare />
+        </div>
+      {/if}
+
+
 
     </section>
 
