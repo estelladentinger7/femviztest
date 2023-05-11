@@ -751,7 +751,9 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible4} > 
-      <h4>FOUR - Same <strong>stuff</strong>, like yeah </h4>
+      {#if selectedSeries}
+      <h4>{selectedSeries.message}</h4>
+      {/if}
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
@@ -912,6 +914,7 @@ let geoJsonToFit = {
       <main>
         <AnimatedLineChart points={selectedSeries.points}/>
       </main>
+
 
     </section>
 
