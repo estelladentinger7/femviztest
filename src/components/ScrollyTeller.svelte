@@ -828,7 +828,7 @@ let geoJsonToFit = {
 
     <section> <!--second section-->
 
-      <h4>Single mother families are less likely to own their home than biparental families. Of families who own their home, let's look at who owns the property across both family types.</h4>
+      <h4>Single mother families are less likely to own their home than biparental families. Of families who own their homes, let's look at who owns the property across both family types.</h4>
       <h4>Are women less likely to be property owners?</h4>
       <div class="sexowners-container">
         <div class="Sexownerbp">
