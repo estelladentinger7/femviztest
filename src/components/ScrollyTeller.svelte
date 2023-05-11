@@ -755,14 +755,25 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible2} > 
-      <h4>TWO - Another important <strong>take away</strong>, but for this section </h4>
-
+      {#if selectedGraph === 'bank'}
+      
+      <h4>Only <strong>29%</strong> of single mother households have bank accounts, and only <strong>15.5%</strong> of these owners (<strong>4.5%</strong> of total single mother households) are <strong>female</strong>.</h4>
+      <h4><strong>Single mothers have less access to investment or safe ways of financing.</strong></h4>
+      {/if} 
+      {#if selectedGraph === 'food'}
+      <h4>For basic needs like food, biparental households and single mother households have similar spending patterns.</h4>
+      {/if} 
+      {#if selectedGraph === 'health'}
+      <h4>For basic needs like health, biparental households and single mother households have similar spending patterns.</h4>
+      {/if} 
+      {#if selectedGraph === 'income'}
+      <h4>Single mother households' incomes are concentrated towards <strong>the lower end</strong> of the spectrum, and they have <strong>lower</strong> average income compared to biparental families.</h4>
+      <h4>Biparental households' incomes are more varied.</h4>
+      {/if} 
     </div>
 
     <div class="takeaway_box" class:showing={isVisible3} > 
-      {#if selectedGraph === 'bank'}
-        <h4>bank takeaway</h4>
-      {/if}
+      <h4>THREE - Same <strong>stuff</strong>, like yeah </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible4} > 
