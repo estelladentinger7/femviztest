@@ -16,12 +16,13 @@ import HousingCompare from "./HousingCompare.svelte";
 import BusinessCompare from "./BusinessCompare.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
+import Textclick from "./textclick_511.svelte";
+import IntSankey from "./intermediaries_sankey.svelte";
 import Food30days from "./Food30days.svelte";
 import Incomecompare from "./IncomeCompare.svelte";
 import Bankaccount from "./BankAccount.svelte";
 import Health6months from "./Health6months.svelte";
 import { fade } from 'svelte/transition';
-
 import AnimatedLineChart from './AnimatedMotivation.svelte';
 import dataset from './dataset.js';
 	
@@ -342,6 +343,23 @@ let geoJsonToFit = {
     visibility: visible;
   }
 
+  .textclick_box {
+  position: absolute;
+  width: 25%;
+  top: 40%;
+  left: 2%;
+  background-color: white;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: black;
+  visibility: hidden;
+  }
+
+  .textclick_box.showing {
+    visibility: visible;
+  }
+
 
   .foreground::before,
   .foreground::after {
@@ -533,36 +551,6 @@ let geoJsonToFit = {
     background-position: center center;
     position: absolute;
   }
-
-.propertyType1-container {
-  position: relative;
-  z-index: 1;
-  margin-bottom: -500px;
-}
-
-.propertyType2-container{
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 0px;
-}
-
-.propertyTypebp {
-  width: 300px;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 4px var(--color-shadow);
-  padding: 0px;
-  margin-top: 0px;
-}
-
-.propertyTypesm {
-  width: 300px;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 4px var(--color-shadow);
-  padding: 0px;
-  margin-top: 0px;
-}
   
 .image.visible2 {
     opacity: 0.2;
@@ -622,8 +610,9 @@ let geoJsonToFit = {
   display: flex;
   position: relative;
   justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
+  width: 80%;
+  margin-top: 0px;
+  left: 5%;
 }
 
 .Sexownerbp {
@@ -631,8 +620,12 @@ let geoJsonToFit = {
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 150px;
-  margin-top: 50px;
+  padding: 50px;
+  left: 0%;
+  top: 0%;
+  margin-top: 0px;
+  margin-bottom: 300px;
+  position: relative;
 }
 
 .Sexownersm {
@@ -640,8 +633,11 @@ let geoJsonToFit = {
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 150px;
-  margin-top: 50px;
+  padding: 50px;
+  left: 0%;
+  top: 0%;
+  margin-bottom: 300px;
+  position: relative;
 }
 
 .Circles-container-equalsize{
@@ -743,7 +739,7 @@ let geoJsonToFit = {
 
 
     <div class="takeaway_box" class:showing={isVisible1} > 
-      <h4>ONE - Important <strong>take away</strong> of this section </h4>
+      <h4> <Textclick {index} /> </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible2} > 
@@ -798,16 +794,15 @@ let geoJsonToFit = {
 
     <div class="sexowners-container">
       <div class="Sexownerbp">
-        <Sexownerbp {index} />
+        
       </div>
   
     <div class="text">
-      <h5 class="text2" class:visible2={isVisible1} >Click to see the proportion of property ownership by sex.</h5>
-      <h4 class="text" class:visible2={isVisible1} >Even in single mother households, 18% of property owners are men</h4>
+      
     </div>
   
     <div class="Sexownersm">
-      <Sexownersm {index} />
+    
     </div>
     </div>
 
@@ -838,21 +833,17 @@ let geoJsonToFit = {
     
     <section> <!--first section-->
 
-      <div class="propertyType1-container">
-        <PropertyType {index} />
+      <h4>Single mother families are less likely to own their home than biparental families. Of families who own their homes, let's look at who owns the property across both family types.</h4>
+      <h4>Are women less likely to be property owners?</h4>
+      <p>Click to see the proportion of property ownership by sex</p>
+      <div class="sexowners-container">
+        <div class="Sexownerbp">
+          <Sexownerbp {index} />
+        </div>
+    
+      <div class="Sexownersm">
+        <Sexownersm {index} />
       </div>
-
-   
-      <div class="propertyType2-container">
-        <div class="propertyTypebp">
-          <PropertyTypebp {index} />
-        </div>
-
-      <h3 class="h3" class:visible1={isVisible1}>Single mother households are more likely to rent than own</h3>
-
-      <div class="propertyTypesm">
-        <PropertyTypesm {index} />
-        </div>
       </div>
 
     </section> 
@@ -954,7 +945,7 @@ let geoJsonToFit = {
 
     <section> <!-- sixth section-->
       <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
-      <Intermediary />
+      <IntSankey />
     </section>
 
     <section> </section> <!--end section-->
