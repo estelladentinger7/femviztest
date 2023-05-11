@@ -759,11 +759,13 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible3} > 
-      <h4>THREE - Same <strong>stuff</strong>, like yeah </h4>
+      <h4>The motivations behind migration are very similar for biparental families and single mothers, but differences appear in <strong> how both groups prepare.</strong> </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible4} > 
-      <h4>FOUR - Same <strong>stuff</strong>, like yeah </h4>
+      {#if selectedSeries}
+      <h4>{selectedSeries.message}</h4>
+      {/if}
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
@@ -923,6 +925,7 @@ let geoJsonToFit = {
       <main>
         <AnimatedLineChart points={selectedSeries.points}/>
       </main>
+
 
     </section>
 
