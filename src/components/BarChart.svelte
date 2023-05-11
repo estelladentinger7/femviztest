@@ -133,12 +133,14 @@ var data = [trace1, trace2];
 <style>
 
 
-  h2 {
+h2 {
         text-align: center;
-        font-size: 1.5em;
+        font-size: 2em;
         color: purple;
         margin-top: 0.1em;
-        margin-bottom: 0.3em;        
+        margin-bottom: 0.3em; 
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;        
   }
 
 </style>

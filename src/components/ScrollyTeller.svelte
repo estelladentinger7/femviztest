@@ -15,11 +15,19 @@ import ShrinkingCircle from './ShrinkingCircles.svelte';
 import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
 import HousingCompare from "./HousingCompare.svelte";
 import BusinessCompare from "./BusinessCompare.svelte";
-import Motivation from "./BarChart.svelte";
+//import Motivation from "./AnimatedMotivation.svelte";
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
 import Textclick from "./textclick.svelte";
 import IntSankey from "./intermediaries_sankey.svelte";
+import AnimatedLineChart from './AnimatedMotivation.svelte';
+import dataset from './dataset.js';
+	
+let selectedSeries = dataset[0];
+	
+function select(series) {
+		selectedSeries = series
+	};
 
 const data1 = [
   { label: 'Item 1', value: 85 },
@@ -37,15 +45,7 @@ const data2 = [
     { label: 'Item 5', value: 15 },
 ];
 
-const data3 = [
-  { label: 'Item 1', value: 15 },
 
-];
-
-const data4 = [
-  { label: 'Item 1', value: 8 },
-
-];
 
 let chartWidth = 500;
 
@@ -60,6 +60,8 @@ let isVisible5 = false; //for background picture of business
 let isVisible7 = false; //for background picture of remittances
 let isVisible8 = false; //for background picture of caravan smuggler
 
+let show_label = false;
+
   $: {
     if (index === 0) {
       isVisible = true;
@@ -70,6 +72,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = false;
       isVisible7 = false;
       isVisible8 = false;
+      show_label = false;
     } else if (index === 1) {
       isVisible = false;
       isVisible1 = true;
@@ -79,6 +82,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = false;
       isVisible7 = false;
       isVisible8 = false;
+      show_label = true;
     } else if (index === 2) {
       isVisible = false;
       isVisible1 = false;
@@ -88,6 +92,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = false;
       isVisible7 = false;
       isVisible8 = false;
+      show_label = true;
     } else if (index === 3) {
       isVisible = false;
       isVisible1 = false;
@@ -97,6 +102,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = false;
       isVisible7 = false;
       isVisible8 = false;
+      show_label = true;
     } else if (index === 4) {
       isVisible = false;
       isVisible1 = false;
@@ -106,6 +112,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = false;
       isVisible7 = false;
       isVisible8 = false;
+      show_label = true;
     } else if (index === 5) {
       isVisible = false;
       isVisible1 = false;
@@ -115,6 +122,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = true;
       isVisible7 = false;
       isVisible8 = false;
+      show_label = true;
     } else if (index === 7) {
       isVisible = false;
       isVisible1 = false;
@@ -124,6 +132,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = false;
       isVisible7 = true;
       isVisible8 = false;
+      show_label = true;
     } else {
       isVisible = false;
       isVisible1 = false;
@@ -133,6 +142,7 @@ let isVisible8 = false; //for background picture of caravan smuggler
       isVisible5 = false;
       isVisible7 = false;
       isVisible8 = true;
+      show_label = false;
     }
   }
 
@@ -163,7 +173,6 @@ let geoJsonToFit = {
   };
 
   $: projection = geoMercator().fitSize([width, height], geoJsonToFit);
-  
 
 </script>
 
@@ -189,11 +198,6 @@ let geoJsonToFit = {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("./mujerencampo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-blend-mode: hard-light ;
     opacity: 0.2;
     z-index: -1;
   }
@@ -202,21 +206,119 @@ let geoJsonToFit = {
   
   .background {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
+    justify-content: center;
+    padding-top: 50px;
+    left: 0;
     /*outline: purple 3px;*/
     
   }
 
   .foreground {
     width: 70%;
+    height: 100%;
     position: relative; 
     justify-content: center;
     background-color:white;   
     text-align: center;
     left: 30%;
     align-items: center;
+    z-index: 1;
   }
+
+  .livingcond_labels {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+  background-color: gray;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  }
+
+  .livingcond_labels.highlighted {
+    background-color: rgba(128,0,128, 1);
+  }
+
+  .rem_labels {
+  position: absolute;
+  top: 3%;
+  left: 12%;
+  background-color: gray;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  }
+
+  .rem_labels.highlighted {
+    background-color: rgba(128,0,128, 1);
+  }
+
+  .motiv_labels {
+  position: absolute;
+  top: 3%;
+  left: 19.5%;
+  background-color: gray;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  }
+
+  .motiv_labels.highlighted {
+    background-color: rgba(128,0,128, 1);
+  }
+
+  .prep_labels {
+  position: absolute;
+  top: 11%;
+  left: 2%;
+  background-color: gray;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  }
+
+  .motiv_labels.highlighted {
+    background-color: rgba(128,0,128, 1);
+  }
+
+  .costs_labels {
+  position: absolute;
+  top: 11%;
+  left: 9.5%;
+  background-color: gray;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  }
+
+  .costs_labels.highlighted {
+    background-color: rgba(128,0,128, 1);
+  }
+
+  .takeaway_box {
+  position: absolute;
+  width: 25%;
+  top: 70%;
+  left: 2%;
+  background-color: white;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: black;
+  visibility: hidden;
+  }
+
+  .takeaway_box.showing {
+    visibility: visible;
+  }
+
 
   .foreground::before,
   .foreground::after {
@@ -237,6 +339,50 @@ let geoJsonToFit = {
   background-color: rgba(128,0,128, 1);
   }
 
+  .bp_label {
+  position: fixed;
+  top: 2%;
+  left: 30.9%;
+  background-color: gray;
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  z-index: 9999;
+  writing-mode: vertical-rl; /* Set the text orientation to vertical */
+  transform: rotate(180deg);
+  visibility: hidden;
+  transition: opacity 2s; 
+  opacity: 0;
+  }
+
+  .bp_label.visible1 {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .sm_label {
+  position: fixed;
+  top: 2%;
+  right: 1%;
+  background-color: rgba(128,0,128, 1);
+  padding: 5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  z-index: 9999;
+  writing-mode: vertical-rl; /* Set the text orientation to vertical */
+  transform: rotate(180deg);
+  visibility: hidden;
+  transition: opacity 2s; 
+  opacity: 0; 
+  }
+
+  .sm_label.visible1 {
+    visibility: visible;
+    opacity: 1;
+  }
+
 
   section {
     /*height: 70vh; */
@@ -244,23 +390,31 @@ let geoJsonToFit = {
     justify-content: center;
     max-width: 80%; /* adjust at will */
     padding: 1em;
+    padding-bottom: 1em;
     left: 10%;
     position: relative; 
   }
 
   h1 {
         text-align: center;
-        font-size: 3em;
+        font-size: 8.5em;
         margin-top: 1em;
-        margin-bottom: 0.1em;
+        margin-bottom: 0em;
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;
+        color: purple;
   }
 
   h2 {
         text-align: center;
-        font-size: 1.5em;
-        color: purple;
+        font-size: 2em;
+        color: black;
         margin-top: 0.1em;
-        margin-bottom: 0.3em;        
+        margin-bottom: 0.3em;
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+       
+                
   }
 
   h3 {
@@ -272,7 +426,19 @@ let geoJsonToFit = {
         font-style: italic; 
         opacity: 0;
         visibility: hidden;
-        transition: opacity 2s, visibility 2s;     
+        transition: opacity 2s, visibility 2s; 
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;    
+  }
+
+  h4 {
+        text-align: center;
+        font-size: 1em;
+        color: gray;
+        margin-top: 3em;
+        margin-bottom: 1em; 
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;       
   }
 
   h3.visible1 {
@@ -280,25 +446,38 @@ let geoJsonToFit = {
     visibility: visible;
   }
 
-  h5 {
-    text-align: left;
+  h4 {
+    text-align: center;
     font-size: 1.5em;
     color: black;
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 1.5em;
+    color: gray;
     font-style: italic;
+  }
+
+  p {
+        text-align: center;
+        font-size: 1em;
+        color: gray;
+        margin-top: 0em;
+        margin-bottom: 3em; 
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+        font-style: italic;       
   }
 
   .text {
     visibility: hidden;
-    margin-top: 10em;
+    margin-top: 5em;
   }
 
   .text2 {
     visibility: hidden;
-    margin-top: 5em;
-  }
-
-  .text-container {
-    visibility: hidden;
+    margin-top: 2em;
   }
 
   .text.visible2 {
@@ -309,37 +488,6 @@ let geoJsonToFit = {
     visibility: visible;
   }
 
-.image-container {
-  position: relative;
-  width: 300px;
-  height: 100px;
-  opacity: 1;
-  visibility: hidden;
-  transition: opactiy 2s, visibility 2s;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  padding-top: 80px;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s ease-in-out;
-}
-
-.image-container:hover .overlay {
-  visibility: visible;
-  opacity: 1;
-}
-
-.chart-container {
-  background-color: #f7f7f7;
-}
 
 .image {
     width: 100%;
@@ -347,18 +495,11 @@ let geoJsonToFit = {
     position: absolute;
     opacity: 0.1;
     visibility: hidden;
-    transition: opacity 2s /*, visibility 2s; */
+    transition: opacity 2s; /*, visibility 2s; */
+    top:0em;
   }
 
-.image.visible {
-    opacity: 0.2;
-    visibility: visible;
-    /* background-image: url('./mujerencampo.png'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 
-  }
   
 .image.visible1 {
     opacity: 0.2;
@@ -367,6 +508,7 @@ let geoJsonToFit = {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    position: absolute;
   }
 
 .propertyType1-container {
@@ -462,20 +604,20 @@ let geoJsonToFit = {
 }
 
 .Sexownerbp {
-  width: 450px;
+  width: 500px;
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 100px;
+  padding: 150px;
   margin-top: 50px;
 }
 
 .Sexownersm {
-  width: 450px;
+  width: 500px;
   height: 100px;
   background-color: var(--color-bg);
   box-shadow: 0 0 4px var(--color-shadow);
-  padding: 100px;
+  padding: 150px;
   margin-top: 50px;
 }
 
@@ -512,6 +654,33 @@ let geoJsonToFit = {
     margin-bottom: 50px;
 }
 
+
+	
+
+	
+	nav {
+		display: flex;
+		gap: 1rem;
+    justify-content: space-between;
+	}
+	
+	nav button {
+		border: transparent;
+		background: transparent;
+		color: black;
+		border-radius: 2px;
+		cursor: pointer;
+		padding: 6px 10px;
+	}
+	
+	nav button.selected {
+		background: rgba(128,0,128, 1);
+		color: #fff;
+	}
+	
+	
+	
+
 </style>
 
 <div class = "title_section" bind:clientHeight={height}> 
@@ -533,6 +702,7 @@ let geoJsonToFit = {
 >
 
 
+
 <div 
       class="background" 
       slot="background"
@@ -540,14 +710,33 @@ let geoJsonToFit = {
       bind:clientHeight={height}
     >
 
-  
 
-    <div class="image" class:visible={isVisible}> <!-- background image for section 0-->
-      <img src="./mujerencampo.png" alt="mujer" style="width: 100%; height: 100vh"/>
+    <div class="livingcond_labels" class:highlighted={isVisible1} > Living conditions </div>
+    <div class="rem_labels" class:highlighted={isVisible3}> Remittances </div>
+    <div class="motiv_labels" class:highlighted={isVisible5}> Motivations </div>
+    <div class="prep_labels" class:highlighted={isVisible7} > Preparation </div>
+    <div class="costs_labels" class:highlighted={isVisible8} > Cost of Migration </div>
+
+
+    <div class="takeaway_box" class:showing={isVisible1} > 
+      <h4>Important <strong>take away</strong> of this section </h4>
     </div>
 
+    <div class="takeaway_box" class:showing={isVisible3} > 
+      <h4>Another important <strong>take away</strong>, but for this section </h4>
+    </div>
+
+    <div class="takeaway_box" class:showing={isVisible5} > 
+      <h4>Same <strong>stuff</strong>, like yeah </h4>
+    </div>
+
+
+
+
+  
+
     <div class="image" class:visible1={isVisible1}> <!-- background image for section 1-->
-      <img src="./housing_est.jpeg" alt="housing" style="width: 100%; height: 100vh"/>
+      <img src="./housing_est.jpeg" alt="housing" style="width: 100%; height: 100%"/>
     </div>
 
     <div class="image" class:visible2={isVisible2}> <!-- background image for section 2-->
@@ -579,14 +768,10 @@ let geoJsonToFit = {
         <Sexownerbp {index} />
       </div>
   
-    <div class="text-container">
+    <div class="text">
       <h5 class="text2" class:visible2={isVisible2} >Click to see the proportion of property ownership by sex.</h5>
-      <!-- <h4 class="text" class:visible2={isVisible2} >Even in single mother households, 18% of property owners are men</h4> -->
-      <div class="text">
-        <Textclick {index} />
-      </div>
+      <h4 class="text" class:visible2={isVisible2} >Even in single mother households, 18% of property owners are men</h4>
     </div>
-    
   
     <div class="Sexownersm">
       <Sexownersm {index} />
@@ -606,39 +791,20 @@ let geoJsonToFit = {
 
     
 
-    <section> <!-- section 7-->
-      <div class="Circles-container-equalsize">
-        {#if progress >= 0.79 && progress <= 0.82}
-          <StaticCircle circleColor="rgba(60, 60, 60, 0.5)" circleRadius="50" text="" />
-        {/if}
-        {#if progress >= 0.79 && progress <= 0.82}
-        <StaticCircle circleColor="rgba(128, 0, 255, 0.5)" circleRadius="50" text="" />
-        {/if}
-      </div>
-  
-      <div class="Circles-container-animated">
-        <div>
-          {#if progress && progress >= 0.82 && progress <= 0.93}
-            <ShrinkingCircle progress={progress - 0.82} initialRadius={50} circleColor="rgba(60, 60, 60, 0.5)" />
-          {/if}
-        </div>
-        <div>
-          {#if progress && progress >= 0.82 && progress <= 0.93}
-            <ExpandingCircle progress={progress - 0.82} initialRadius={50} circleColor="rgba(128, 0, 255, 0.5)" />
-          {/if}
-        </div>
-      </div>
-  
-    </section>
+
 
   </div>
 
   <div class="foreground" slot="foreground">
-    
-    
 
-    <section> <!--first section-->
+    <div class="bp_label" class:visible1={show_label}> Biparental Families </div>
+    <div class="sm_label" class:visible1={show_label}> Single Mothers </div>
+
     
+    <section> </section>
+    
+    <section> <!--first section-->
+
       <div class="propertyType1-container">
         <PropertyType {index} />
       </div>
@@ -698,11 +864,26 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- sixth section-->
-      <Chart data1={data1} data2={data2} data3={data3} data4={data4} progress={progress*1.6}/>
+      <Chart data1={data1} data2={data2} progress={progress*1.3}  {index}/>
     </section>
 
     <section> <!-- seventh section-->
-      <Motivation/> 
+      <header>
+        <h2>And the preparation begins by...</h2> 
+        <p>Click on each category to find out</p> 
+        <nav>
+          {#each dataset as series}
+            <button on:click|preventDefault={() => select(series)} class:selected={series == selectedSeries} style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">
+              {series.label}
+            </button>
+          {/each}
+        </nav>
+      </header>
+
+      <main>
+        <AnimatedLineChart points={selectedSeries.points}/>
+      </main>
+
     </section>
 
     <section> <!-- eigth section-->
@@ -724,6 +905,8 @@ let geoJsonToFit = {
       </div>
     </section>
 
+    
+
     <section> <!-- ninth section-->
       <h2>Discrepancy emerges</h2>
       <div class="text-columns">
@@ -739,8 +922,7 @@ let geoJsonToFit = {
       <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
       <IntSankey />
     </section>
-
-
+  
   </div>
 
 </Scroller>
