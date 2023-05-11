@@ -647,11 +647,14 @@ let geoJsonToFit = {
   align-items: center;
   position: fixed;
   top: 50%;
-  left: 48%;
+  left: 66%;
   transform: translate(-50%, -50%);
   width: 100%;
-  margin-top: 20px;
-  gap: 460px; 
+  /* margin-top: 20px;
+  margin-right: 0px;
+  margin-left: 450px;
+  gap: 600px;  */
+  gap: 610px;
 }
 
 .Circles-container-animated {
@@ -660,18 +663,28 @@ let geoJsonToFit = {
   align-items: center;
   position: fixed;
   top: 50%;
-  left: 48%;
+  left: 66%;
   transform: translate(-50%, -50%);
   width: 100%;
-  margin-top: 20px;
-  gap: 460px; /* Add this line to create space between the circles */
+  /* margin-top: 20px; */
+  gap: 610px; /* Add this line to create space between the circles */
+}
+.EmptyContainer{
+  height: 110vh;
+  position: relative;
 }
 
 .text-columns {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+}
+.text-columns2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 
@@ -805,7 +818,7 @@ let geoJsonToFit = {
     </div>
     </div>
 
-    <!-- <div class="progress-bars">
+    <div class="progress-bars">
       <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress value={count ? (index + 1) / count : 0} />
 
@@ -814,7 +827,7 @@ let geoJsonToFit = {
 
       <p>total progress</p>
       <progress value={progress || 0} />
-    </div> -->
+    </div>
 
   
 
@@ -852,13 +865,14 @@ let geoJsonToFit = {
     <section> <!-- second section -->
       <h2>Why is that? Are they financially different?</h2>
       <p>Click on each category to see families' financial situations</p> 
-      
+
       <nav>
         <button on:click|preventDefault="{() => select_graph('food')}" class:selected={selectedGraph === 'food'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Food</button>
         <button on:click|preventDefault="{() => select_graph('health')}" class:selected={selectedGraph === 'health'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Health</button>
         <button on:click|preventDefault="{() => select_graph('bank')}" class:selected={selectedGraph === 'bank'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Bank Account Onwership</button>
         <button on:click|preventDefault="{() => select_graph('income')}" class:selected={selectedGraph === 'income'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Income Comparison</button>
       </nav>
+
 
       {#if selectedGraph === 'food'}
         <div transition:fade>
@@ -884,8 +898,6 @@ let geoJsonToFit = {
           <Incomecompare />
         </div>
       {/if}
-
-
 
     </section>
 
@@ -915,29 +927,64 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- fifth section-->
-      
+        <div class="EmptyContainer">
+        <div class="Circles-container-equalsize">
+          {#if progress >= 0.71 && progress <= 0.76}
+            <StaticCircle circleColor="rgba(128,128,128, 0.5)" circleRadius="50" text="" />
+          {/if}
+          {#if progress >= 0.71 && progress <= 0.76}
+          <StaticCircle circleColor="rgba(128, 0, 128, 0.5)" circleRadius="50" text="" />
+          {/if}
+        </div>
+    
+        <div class="Circles-container-animated">
+          <div>
+            {#if progress && progress >= 0.76 && progress <= 0.87}
+              <ShrinkingCircle progress={progress - 0.76} initialRadius={50} circleColor="rgba(128,128,128, 0.5)" />
+            {/if}
+          </div>
+          <div>
+            {#if progress && progress >= 0.76 && progress <= 0.87}
+              <ExpandingCircle progress={progress - 0.76} initialRadius={50} circleColor="rgba(128, 0, 128, 0.5)" />
+            {/if}
+          </div>
+        </div>
 
+        <div class="Circles-container-equalsize">
+          {#if progress >= 0.87 && progress <= 0.90}
+            <StaticCircle circleColor="rgba(128,128,128, 0.5)" circleRadius="34" text="" />
+          {/if}
+          {#if progress >= 0.87 && progress <= 0.90}
+          <StaticCircle circleColor="rgba(128, 0, 128, 0.5)" circleRadius="77" text="" />
+          {/if}
+        </div>
 
       <h2>Cost of migration versus awareness </h2>
       <h2>For those who are aware of the migration cost beforehand, </h2>
       <div class="text-columns">
-        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.86" textColor='black' text="The average cost is $2894" />
-        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.86" textColor='black' fontSize='22px' containerWidth="50%" text="Biparental hosueholds and sinlge mother households spend similar amount of money for migration" />
-        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.86" textColor='purple' text="The average cost is $3244" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' text="The average cost is $2894" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Biparental hosueholds and sinlge mother households spend similar amount of money for migration" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='purple' text="The average cost is $3244" />
+      </div>
+
+      <div class="text-columns2">
+      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='black' text=" " />
+      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unware of the cost?" />
+      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='purple' text=" " />
+      </div>
+
+      <div class="text-columns2">
+        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='black' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Discrepancy emerges" />
+        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='purple' text=" " />
       </div>
 
       <div class="text-columns">
-      <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.86" textColor='black' text=" " />
-      <ConditionalText progress="{progress}" minProgress="0.82" maxProgress="0.86" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unware of the cost?" />
-      <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.86" textColor='purple' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' text="The average cost decreases to $2700" />
+        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Single mothers spend more" />
+        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='purple' text="The average cost increases to $8260" />
       </div>
-
-      <h2>Discrepancy emerges</h2>
-      <div class="text-columns">
-        <ConditionalText progress="{progress}" minProgress="0.90" maxProgress="0.96" textColor='black' text="The average cost decreases to $2700" />
-        <ConditionalText progress="{progress}" minProgress="0.90" maxProgress="0.96" textColor='black' fontSize='22px' containerWidth="50%" text="Single mothers spend more" />
-        <ConditionalText progress="{progress}" minProgress="0.90" maxProgress="0.96" textColor='purple' text="The average cost increases to $8260" />
-      </div>
+    </div>
       
     </section>
 

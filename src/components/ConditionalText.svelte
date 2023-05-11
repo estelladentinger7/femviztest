@@ -12,7 +12,7 @@
   
   <style>
     .conditional-text {
-      font-family: 'Times New Roman', Times, serif; /* Change the font-family as desired */
+      font-family: 'Jost', sans-serif; /* Change the font-family as desired */
       width: 100%;
     }
   </style>
