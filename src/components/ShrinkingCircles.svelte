@@ -28,12 +28,12 @@
       height: {initialRadius * 2 - progress * (initialRadius - finalRadius) * 2}px;
       background-color: {circleColor};
       border-radius: 50%;
-    "
   ></div>
 </div> -->
 <div 
     class="circle-container"
-    style="width: {initialRadius * 2}px; height: {initialRadius * 2}px;"
+    
+    style="width:100%; height: 100%;"
 >
     <div
         class="circle"

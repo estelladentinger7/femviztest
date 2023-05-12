@@ -20,7 +20,7 @@
   </style>
   
   <div class="circle-container">
-    <svg width="{2 * circleRadius}" height="{2 * circleRadius}">
+    <svg width=100% height=100%>
       <circle
         cx="{circleRadius}"
         cy="{circleRadius}"

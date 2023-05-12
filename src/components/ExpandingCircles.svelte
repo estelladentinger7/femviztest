@@ -34,7 +34,7 @@
 </div> -->
 <div 
     class="circle-container"
-    style="width: {finalRadius * 2}px; height: {finalRadius * 2}px;"
+    style="width:100%; height:100%;"
 >
     <div
         class="circle"
