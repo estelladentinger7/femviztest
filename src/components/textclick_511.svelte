@@ -26,18 +26,18 @@
         let text = group.append('text')
             .attr('x', 1)
             .attr('y', 5)
-            .text('Women and men share property ownership in 10% of biparental households compared to 2% in single mother households');
+            .text('Click through to see the proportion of property ownership by sex');
 
         window.addEventListener('click', () => {
         count++;
         if (count === 1) {
-            text.text('59% of properties in biparental households are owned by men');
+            text.text('Even in single mother households, 18% of property owners are men.\nClick again');
         } else if (count === 2) {
-            text.text('Only 31% of properties in biparental households are owned by women');
+            text.text('Women share property ownership in 10% of biparental households compared to 2% in single mother households.\nClick again');
         } else if (count === 3) {
-            text.text('Even in single mother households, 18% of property owners are men');
+            text.text('59% of properties in biparental households are owned by men.\nClick again');
         } else if (count === 4) {
-            text.text('Women share property ownership in 10% of biparental households compared to 2% in single mother households');
+            text.text('Only 31% of properties in biparental households are owned by women.\nClick again');
             count = 0;
         }
         });

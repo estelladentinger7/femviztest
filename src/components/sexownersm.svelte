@@ -40,7 +40,7 @@
   }
 
   let container;
-  let currentColorIndex = 0;
+  let currentColorIndex = 2;
   const colors = ['#E4A0F7', '#702963', '#6F2DA8'];
   
   onMount(() => {
@@ -86,13 +86,14 @@
     animateCircles(currentColorIndex === colors.length ? null : colors[currentColorIndex]);
   });
 
-  window.addEventListener('scroll', () => {
+  /* window.addEventListener('scroll', () => {
     const rect = svg.node().getBoundingClientRect();
 
     if (rect.top <= window.innerHeight && rect.bottom >= 0) {
       animateCircles(colors[currentColorIndex]);
     }
   });
+  */
 
     const group = select(container)
       .append('svg')
