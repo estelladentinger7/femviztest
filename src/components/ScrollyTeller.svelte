@@ -652,9 +652,10 @@ let geoJsonToFit = {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  margin-top: 2px;
-  margin-left: 280px;
-  gap: 640px;
+  /* margin-top: 2px; */
+  margin-left: 16%;
+  /* margin-right: 100%; */
+  gap: 38%;
 }
 
 .Circles-container-animated {
@@ -666,8 +667,8 @@ let geoJsonToFit = {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  margin-left: 430px;
-  gap: 340px;
+  margin-left: 27.6%;
+  gap: 14.9%;
 }
 
 .EmptyContainer{
@@ -949,22 +950,22 @@ let geoJsonToFit = {
         <div class="EmptyContainer">
         <div class="Circles-container-equalsize">
           {#if progress >= 0.71 && progress <= 0.76}
-            <StaticCircle circleColor="rgba(128,128,128,0.5)" circleRadius="44.605"/>
+            <StaticCircle  circleRadius="44.6" circleColor="rgba(128,128,128, 0.5)"/>
           {/if}
           {#if progress >= 0.71 && progress <= 0.76}
-          <StaticCircle circleColor="rgba(128,0,128,0.5)" circleRadius="50"/>
+          <StaticCircle  circleRadius="50" circleColor="rgba(128, 0, 128, 0.5)"/>
           {/if}
         </div>
     
         <div class="Circles-container-animated">
           <div>
             {#if progress && progress >= 0.76 && progress <= 0.88}
-              <ShrinkingCircle progress={progress - 0.76} initialRadius={44.605} finalRadius={41.61} circleColor="rgba(128,128,128, 0.5)" />
+              <ShrinkingCircle progress={progress - 0.76} initialRadius={44.6} finalRadius={35} circleColor="rgba(128,128,128, 0.5)" />
             {/if}
           </div>
           <div>
             {#if progress && progress >= 0.76 && progress <= 0.88}
-              <ExpandingCircle progress={progress - 0.76} initialRadius={50} finalRadius={350} circleColor="rgba(128, 0, 128, 0.5)" />
+              <ExpandingCircle progress={progress - 0.76} initialRadius={50} finalRadius={450} circleColor="rgba(128, 0, 128, 0.5)" />
             {/if}
           </div>
         </div>
@@ -999,9 +1000,9 @@ let geoJsonToFit = {
       </div>
 
       <div class="text-columns">
-        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' isBold=true text="The average cost decreases to $2700" />
-        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text=" " />
-        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='purple' isBold=true text="The average cost increases to $8260" />
+        <ConditionalText progress="{progress}" minProgress="0.83" maxProgress="0.98" textColor='black' isBold=true text="The average cost decreases to $2700" />
+        <ConditionalText progress="{progress}" minProgress="0.83" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.83" maxProgress="0.98" textColor='purple' isBold=true text="The average cost increases to $8260" />
       </div>
 
       <div class="text-columns">

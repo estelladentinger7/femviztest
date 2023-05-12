@@ -51,7 +51,7 @@
   };
 
   onMount(async () => {
-    const response = await fetch('./src/data/Income.json');
+    const response = await fetch('./Income.js');
     const json = await response.json();
     
     // Here, we assume your JSON data looks something like this:
