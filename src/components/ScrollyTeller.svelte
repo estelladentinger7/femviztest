@@ -492,6 +492,7 @@ let geoJsonToFit = {
         font-weight: 300;       
   }
 
+
   h3.visible1 {
     opacity: 1;
     visibility: visible;
@@ -672,7 +673,7 @@ let geoJsonToFit = {
 }
 
 .EmptyContainer{
-  height: 110vh;
+  height: 130vh;
   position: relative;
 }
 
@@ -958,12 +959,12 @@ let geoJsonToFit = {
         </div> -->
         <div class="Circles-container-animated">
           <div>
-            {#if progress && progress >= 0.71 && progress <= 0.76}
+            {#if progress && progress >= 0.71 && progress <= 0.78}
               <ShrinkingCircle progress={progress - 0.76} initialRadius={44.6} finalRadius={44.6} circleColor="rgba(128,128,128, 0.5)" />
             {/if}
           </div>
           <div>
-            {#if progress && progress >= 0.71 && progress <= 0.76}
+            {#if progress && progress >= 0.71 && progress <= 0.78}
               <ExpandingCircle progress={progress - 0.76} initialRadius={50} finalRadius={50} circleColor="rgba(128, 0, 128, 0.5)" />
             {/if}
           </div>
@@ -971,13 +972,13 @@ let geoJsonToFit = {
     
         <div class="Circles-container-animated">
           <div>
-            {#if progress && progress >= 0.76 && progress <= 0.88}
-              <ShrinkingCircle progress={progress - 0.76} initialRadius={44.6} finalRadius={35} circleColor="rgba(128,128,128, 0.5)" />
+            {#if progress && progress >= 0.78 && progress <= 0.90}
+              <ShrinkingCircle progress={progress - 0.78} initialRadius={44.6} finalRadius={35} circleColor="rgba(128,128,128, 0.5)" />
             {/if}
           </div>
           <div>
-            {#if progress && progress >= 0.76 && progress <= 0.88}
-              <ExpandingCircle progress={progress - 0.76} initialRadius={50} finalRadius={450} circleColor="rgba(128, 0, 128, 0.5)" />
+            {#if progress && progress >= 0.78 && progress <= 0.90}
+              <ExpandingCircle progress={progress - 0.78} initialRadius={50} finalRadius={450} circleColor="rgba(128, 0, 128, 0.5)" />
             {/if}
           </div>
         </div>
@@ -992,35 +993,48 @@ let geoJsonToFit = {
         </div> -->
 
       <h2>Cost of migration versus awareness </h2>
-      <h2>For those who are aware of the migration cost beforehand, </h2>
+      <p>Circles represent the amount of money that families spend on migration</p>
+      <!-- <h5>For those who are aware of the migration cost beforehand, </h5> -->
+      <div class="text-columns">
+        <ConditionalText progress="{progress}" minProgress="0.69" maxProgress="0.98" textColor='black' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.69" maxProgress="0.98" textColor='black'  fontSize='22px' containerWidth="80%" text="For those who are aware of the migration cost beforehand, ..." />
+        <ConditionalText progress="{progress}" minProgress="0.69" maxProgress="0.98" textColor='purple' text=" " />
+      </div>
+
       <div class="text-columns">
         <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' isBold=true text="The average cost is $2894" />
-        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black'  fontSize='22px' containerWidth="50%" text="Biparental households and single mother households spend similar amount of money for migration" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black'  fontSize='22px' containerWidth="50%" text="...Biparental households and single mother households spend similar amount of money for migration" />
         <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='purple' isBold=true text="The average cost is $3244" />
       </div>
 
       <div class="text-columns2">
-      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='black' text=" " />
-      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unaware of the cost beforehand?" />
-      <ConditionalText progress="{progress}" minProgress="0.75" maxProgress="0.98" textColor='purple' text=" " />
+      <ConditionalText progress="{progress}" minProgress="0.77" maxProgress="0.98" textColor='black' text=" " />
+      <ConditionalText progress="{progress}" minProgress="0.77" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="What if they are unaware of the cost beforehand?" />
+      <ConditionalText progress="{progress}" minProgress="0.77" maxProgress="0.98" textColor='purple' text=" " />
+      </div>
+
+      <div class="text-columns">
+        <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.98" textColor='black' isBold=true text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.78" maxProgress="0.98" textColor='purple' isBold=true text=" " />
       </div>
 
       <div class="text-columns2">
-        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='black' text=" " />
-        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text="Discrepancy emerges" />
-        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='purple' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.82" maxProgress="0.98" textColor='black' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.82" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text="Discrepancy emerges" />
+        <ConditionalText progress="{progress}" minProgress="0.82" maxProgress="0.98" textColor='purple' text=" " />
       </div>
 
       <div class="text-columns">
-        <ConditionalText progress="{progress}" minProgress="0.83" maxProgress="0.98" textColor='black' isBold=true text="The average cost decreases to $2700" />
-        <ConditionalText progress="{progress}" minProgress="0.83" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text=" " />
-        <ConditionalText progress="{progress}" minProgress="0.83" maxProgress="0.98" textColor='purple' isBold=true text="The average cost increases to $8260" />
+        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='black' isBold=true text="The average cost decreases to $2700" />
+        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='purple' isBold=true text="The average cost increases to $8260" />
       </div>
 
       <div class="text-columns">
-        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='black' text=" " />
-        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text="Single mothers face higher migration cost when they do not have awareness beforehand" />
-        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='purple' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.88" maxProgress="0.98" textColor='black' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.88" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text="Single mothers face higher migration cost when they do not have awareness beforehand" />
+        <ConditionalText progress="{progress}" minProgress="0.88" maxProgress="0.98" textColor='purple' text=" " />
       </div>
     </div>
 
