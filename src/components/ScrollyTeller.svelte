@@ -623,27 +623,22 @@ let geoJsonToFit = {
 }
 
 .Sexownerbp {
-  width: 500px;
-  height: 100px;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 4px var(--color-shadow);
+  width: 500%;
+  height: 100%;
   padding: 50px;
   left: 0%;
   top: 0%;
   margin-top: 0px;
-  margin-bottom: 300px;
   position: relative;
 }
 
 .Sexownersm {
-  width: 500px;
-  height: 100px;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 4px var(--color-shadow);
+  width: 500%;
+  height: 100%;
   padding: 50px;
   left: 0%;
   top: 0%;
-  margin-bottom: 300px;
+  margin-bottom: 400px;
   position: relative;
 }
 
