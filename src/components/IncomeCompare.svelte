@@ -36,36 +36,6 @@
     showlegend: true,
     annotations: [
     {
-      x: 760,
-      y: 60,
-      xref: 'x',
-      yref: 'y',
-      text: 'Biparental families have longer tail in the income range',
-      showarrow: true,
-      arrowhead: 7,
-      font: {
-          size: 14
-        },
-      ax: 0,
-      ay: -40
-    },
-    {
-      x: 300,
-      y: 140,
-      xref: 'x',
-      yref: 'y',
-      text: 'Single mother households are more concentrated in the lower income range',
-      showarrow: true,
-      arrowhead: 7,
-      font: {
-          size: 14
-        },
-      ax: 0,
-      ay: -40,
-      arrowcolor: 'rgba(128,0,128,1)',
-      // align: 'left',
-    },
-    {
         text: 'Hover over the graph to see more details',
         showarrow: false,
         xref: 'paper',
@@ -89,6 +59,9 @@
     // Separate the income amounts based on type
     let singleMotherIncome = json.find(item => item.type === 'Single Mother').avg_income_amount;
     let biparentalIncome = json.find(item => item.type === 'Biparental').avg_income_amount;
+
+    let singleMotherMeanIncome = singleMotherIncome.reduce((a, b) => a + b, 0) / singleMotherIncome.length;
+    let biparentalMeanIncome = biparentalIncome.reduce((a, b) => a + b, 0) / biparentalIncome.length;
 
     // Create two histogram traces
     data = [
@@ -115,6 +88,62 @@
         hovertemplate: 'In the income range of %{x} dollars, there are %{y} biparental families<extra></extra>',
       }
     ];
+    // layout.shapes = [
+    // // Line indicating the mean income for Single Mother
+    // {
+    //   type: 'line',
+    //   x0: singleMotherMeanIncome,
+    //   x1: singleMotherMeanIncome,
+    //   yref: 'paper',
+    //   y0: 0,
+    //   y1: 1,
+    //   line: {
+    //     color: 'rgb(128,0,128)',
+    //     width: 2,
+    //     dash: 'dashdot'
+    //   }
+    // },
+    // Line indicating the mean income for Biparental
+  //   {
+  //     type: 'line',
+  //     x0: biparentalMeanIncome,
+  //     x1: biparentalMeanIncome,
+  //     yref: 'paper',
+  //     y0: 0,
+  //     y1: 1,
+  //     line: {
+  //       color: 'rgb(128,128,128)',
+  //       width: 2,
+  //       dash: 'dashdot'
+  //     }
+  //   }
+  // ];
+  // layout.annotations.push(
+  //   // Annotation for Single Mother mean income
+  //   {
+  //     x: singleMotherMeanIncome,
+  //     y: 1.04, // you may need to adjust this
+  //     xref: 'x',
+  //     yref: 'paper',
+  //     text: `The average income for single mother is $${Math.round(singleMotherMeanIncome)}`,
+  //     showarrow: false,
+  //     font: {
+  //       size: 14
+  //     }
+  //   },
+  //   // Annotation for Biparental mean income
+  //   {
+  //     x: 450,
+  //     y: 0.7, // you may need to adjust this
+  //     xref: 'x',
+  //     yref: 'paper',
+  //     text: `The average income for biparental family is $${Math.round(biparentalMeanIncome)}`,
+  //     showarrow: true,
+  //     font: {
+  //       size: 14
+  //     }
+  //   }
+  // );
 
     const { default: PlotlyModule } = await import("plotly.js-dist");
     const Plotly = PlotlyModule;

@@ -7,7 +7,7 @@
     export let textColor = "black"; // Add this line for textColor
     export let fontSize = "20px"; // Add this line for fontSize
     export let containerWidth = "auto"; // Add this line for containerWidth
-    export let isBold = true; 
+    export let isBold = false; 
   </script>
   
   <style>

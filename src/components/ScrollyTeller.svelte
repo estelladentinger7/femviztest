@@ -755,19 +755,19 @@ let geoJsonToFit = {
 
     <div class="takeaway_box" class:showing={isVisible2} > 
       {#if selectedGraph === 'bank'}
-      
+      <h4>And single mothers may not have real control over their finance.</h4>
       <h4>Only <strong>29%</strong> of single mother households have bank accounts, and only <strong>15.5%</strong> of these owners (<strong>4.5%</strong> of total single mother households) are <strong>female</strong>.</h4>
-      <h4><strong>Single mothers have less access to investment or safe ways of financing.</strong></h4>
+      <h4><strong>Single mothers have less access to investments or safe ways of financing.</strong></h4>
       {/if} 
       {#if selectedGraph === 'food'}
       <h4>For basic needs like food, biparental households and single mother households have similar spending patterns.</h4>
       {/if} 
       {#if selectedGraph === 'health'}
-      <h4>For basic needs like health, biparental households and single mother households have similar spending patterns.</h4>
+      <h4>For health, they also have similar patterns but are more extreme compared to spendings on food. Around 1/3 of the families only spend a small fraction.</h4>
       {/if} 
       {#if selectedGraph === 'income'}
+      <h4>However, their monthly incomes are actually very different.</h4>
       <h4>Single mother households' incomes are concentrated towards <strong>the lower end</strong> of the spectrum, and they have <strong>lower</strong> average income compared to biparental families.</h4>
-      <h4>Biparental households' incomes are more varied.</h4>
       {/if} 
     </div>
 
@@ -782,7 +782,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
-      <h4>FIVE - Same <strong>stuff</strong>, like yeah </h4>
+      <h4>Circles represent the amount of money that families spend on migration. </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible6} > 
@@ -884,8 +884,9 @@ let geoJsonToFit = {
       <nav>
         <button on:click|preventDefault="{() => select_graph('food')}" class:selected={selectedGraph === 'food'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Food</button>
         <button on:click|preventDefault="{() => select_graph('health')}" class:selected={selectedGraph === 'health'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Health</button>
-        <button on:click|preventDefault="{() => select_graph('bank')}" class:selected={selectedGraph === 'bank'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Bank Account Onwership</button>
+        
         <button on:click|preventDefault="{() => select_graph('income')}" class:selected={selectedGraph === 'income'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Income Comparison</button>
+        <button on:click|preventDefault="{() => select_graph('bank')}" class:selected={selectedGraph === 'bank'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Bank Account Onwership</button>
       </nav>
 
 
@@ -978,9 +979,9 @@ let geoJsonToFit = {
       <h2>Cost of migration versus awareness </h2>
       <h2>For those who are aware of the migration cost beforehand, </h2>
       <div class="text-columns">
-        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' text="The average cost is $2894" />
-        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Biparental households and single mother households spend similar amount of money for migration" />
-        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='purple' text="The average cost is $3244" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black' isBold=true text="The average cost is $2894" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='black'  fontSize='22px' containerWidth="50%" text="Biparental households and single mother households spend similar amount of money for migration" />
+        <ConditionalText progress="{progress}" minProgress="0.71" maxProgress="0.98" textColor='purple' isBold=true text="The average cost is $3244" />
       </div>
 
       <div class="text-columns2">
@@ -991,16 +992,24 @@ let geoJsonToFit = {
 
       <div class="text-columns2">
         <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='black' text=" " />
-        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Discrepancy emerges" />
+        <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text="Discrepancy emerges" />
         <ConditionalText progress="{progress}" minProgress="0.79" maxProgress="0.98" textColor='purple' text=" " />
       </div>
 
       <div class="text-columns">
-        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' text="The average cost decreases to $2700" />
-        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text="Single mothers spend more" />
-        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='purple' text="The average cost increases to $8260" />
+        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' isBold=true text="The average cost decreases to $2700" />
+        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='black' fontSize='22px' containerWidth="50%" text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.84" maxProgress="0.98" textColor='purple' isBold=true text="The average cost increases to $8260" />
+      </div>
+
+      <div class="text-columns">
+        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='black' text=" " />
+        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text="Single mothers face higher migration cost when they do not have awareness beforehand" />
+        <ConditionalText progress="{progress}" minProgress="0.86" maxProgress="0.98" textColor='purple' text=" " />
       </div>
     </div>
+
+      
       
     </section>
 
