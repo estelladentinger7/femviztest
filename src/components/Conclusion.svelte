@@ -69,13 +69,13 @@
 
   h2 {
         text-align: left;
-        font-size: 1.2em;
-        color: white;
+        font-size: 1.4em;
+        color: black;
         margin-top: 0em;
         margin-bottom: 0em;
         font-family: 'Jost', sans-serif;
-        font-weight: 300;
-        background-color: rgba(51, 3, 83, 0.8);
+        font-weight: 600;
+        background-color: rgba(253, 253, 253, 0.7);
        
                 
   }

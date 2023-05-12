@@ -26,7 +26,6 @@ import { fade } from 'svelte/transition';
 import AnimatedLineChart from './AnimatedMotivation.svelte';
 import dataset from './dataset.js';
 import Conclusion from './Conclusion.svelte';
-import ConclusionBw from './ConclusionBW.svelte';
 	
 let selectedSeries = dataset[0];
 	
@@ -767,7 +766,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible6} > 
-      <h4>SIX - Same <strong>stuff</strong>, like yeah </h4>
+      <h4>Of the families who spent remittances on intermediaries, <b>42%</b> of single mother households spent <b>over half</b> of their remittances on intermediaries, compared to only <b>24%</b> of biparental households</h4>
     </div>
 
 
@@ -952,7 +951,7 @@ let geoJsonToFit = {
 
 
     <section> <!-- sixth section-->
-      <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
+      <h2>Cost of Knowledge: Single mother households spend more on intemediaries</h2>
       <IntSankey />
     </section>
 
