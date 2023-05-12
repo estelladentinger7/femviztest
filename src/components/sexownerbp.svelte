@@ -89,13 +89,14 @@
    // Show initial animation without a click
    animateCircles(null);
 
+   /*
   // Add event listener to SVG for clicks
   svg.on('click', () => {
     currentColorIndex = (currentColorIndex + 1) % (colors.length + 1);
     animateCircles(currentColorIndex === colors.length ? null : colors[currentColorIndex]);
   });
 
-  /*
+  
   window.addEventListener('scroll', () => {
     const rect = svg.node().getBoundingClientRect();
 
