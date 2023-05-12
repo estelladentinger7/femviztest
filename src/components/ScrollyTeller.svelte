@@ -647,14 +647,12 @@ let geoJsonToFit = {
   align-items: center;
   position: fixed;
   top: 50%;
-  left: 66%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  /* margin-top: 20px;
-  margin-right: 0px;
-  margin-left: 450px;
-  gap: 600px;  */
-  gap: 610px;
+  margin-top: 2px;
+  margin-left: 280px;
+  gap: 640px;
 }
 
 .Circles-container-animated {
@@ -663,12 +661,13 @@ let geoJsonToFit = {
   align-items: center;
   position: fixed;
   top: 50%;
-  left: 66%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  /* margin-top: 20px; */
-  gap: 610px; /* Add this line to create space between the circles */
+  margin-left: 430px;
+  gap: 340px;
 }
+
 .EmptyContainer{
   height: 110vh;
   position: relative;
@@ -947,34 +946,34 @@ let geoJsonToFit = {
         <div class="EmptyContainer">
         <div class="Circles-container-equalsize">
           {#if progress >= 0.71 && progress <= 0.76}
-            <StaticCircle circleColor="rgba(128,128,128, 0.5)" circleRadius="50" text="" />
+            <StaticCircle circleColor="rgba(128,128,128,0.5)" circleRadius="44.605"/>
           {/if}
           {#if progress >= 0.71 && progress <= 0.76}
-          <StaticCircle circleColor="rgba(128, 0, 128, 0.5)" circleRadius="50" text="" />
+          <StaticCircle circleColor="rgba(128,0,128,0.5)" circleRadius="50"/>
           {/if}
         </div>
     
         <div class="Circles-container-animated">
           <div>
-            {#if progress && progress >= 0.76 && progress <= 0.87}
-              <ShrinkingCircle progress={progress - 0.76} initialRadius={50} circleColor="rgba(128,128,128, 0.5)" />
+            {#if progress && progress >= 0.76 && progress <= 0.88}
+              <ShrinkingCircle progress={progress - 0.76} initialRadius={44.605} finalRadius={41.61} circleColor="rgba(128,128,128, 0.5)" />
             {/if}
           </div>
           <div>
-            {#if progress && progress >= 0.76 && progress <= 0.87}
-              <ExpandingCircle progress={progress - 0.76} initialRadius={50} circleColor="rgba(128, 0, 128, 0.5)" />
+            {#if progress && progress >= 0.76 && progress <= 0.88}
+              <ExpandingCircle progress={progress - 0.76} initialRadius={50} finalRadius={350} circleColor="rgba(128, 0, 128, 0.5)" />
             {/if}
           </div>
         </div>
 
-        <div class="Circles-container-equalsize">
+        <!-- <div class="Circles-container-equalsize">
           {#if progress >= 0.87 && progress <= 0.90}
-            <StaticCircle circleColor="rgba(128,128,128, 0.5)" circleRadius="34" text="" />
+            <StaticCircle circleColor="rgba(128,128,128, 0.5)" circleRadius={41.61}/>
           {/if}
           {#if progress >= 0.87 && progress <= 0.90}
-          <StaticCircle circleColor="rgba(128, 0, 128, 0.5)" circleRadius="77" text="" />
+          <StaticCircle circleColor="rgba(128, 0, 128, 0.5)" circleRadius={85}/>
           {/if}
-        </div>
+        </div> -->
 
       <h2>Cost of migration versus awareness </h2>
       <h2>For those who are aware of the migration cost beforehand, </h2>
