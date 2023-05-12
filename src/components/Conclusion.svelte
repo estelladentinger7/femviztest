@@ -101,7 +101,7 @@ body {
 
   #container {
     /* background-image: url("./conclusion_protest.png"); */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./conclusionprotest.png") no-repeat top center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../data/conclusionprotest.png") no-repeat top center;
     background-size: cover;
     background-attachment: fixed;
     /* background-position: center; */
