@@ -37,7 +37,7 @@
         } else if (count === 3) {
             text.html('59% of properties in biparental households are owned by men.\n<b>Click again</b>');
         } else if (count === 4) {
-            text.html('Only 31% of properties in biparental households are owned by women.\n<b>Click again</b>');
+            text.html('Only 31% of properties in biparental households are owned by women.');
             count = 0;
         }
         });
