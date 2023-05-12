@@ -1,6 +1,7 @@
 <!-- ConditionalText.svelte -->
 <script>
     export let progress = 0;
+    import { fade } from 'svelte/transition';
     export let minProgress = 0;
     export let maxProgress = 1;
     export let text = "";
@@ -18,7 +19,7 @@
   </style>
   
 
-  {#if progress >= minProgress && progress <= maxProgress}
+  <!-- {#if progress >= minProgress && progress <= maxProgress}
   <div
     style="width: {containerWidth}; font-weight: {isBold ? 'bold' : 'normal'};" 
   >
@@ -29,5 +30,18 @@
       {text}
     </p>
   </div>
+{/if} -->
+
+{#if progress >= minProgress && progress <= maxProgress}
+    <div
+        style="width: {containerWidth}; font-weight: {isBold ? 'bold' : 'normal'};" 
+        in:fade={{duration: 500}}
+    >
+        <p
+            class="conditional-text"
+            style="font-size: {fontSize}; color: {textColor};"
+        >
+            {text}
+        </p>
+    </div>
 {/if}
-  
