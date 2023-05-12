@@ -653,7 +653,7 @@ let geoJsonToFit = {
   transform: translate(-50%, -50%);
   width: 100%;
   /* margin-top: 2px; */
-  margin-left: 16%;
+  margin-left: 25%;
   /* margin-right: 100%; */
   gap: 38%;
 }
@@ -667,8 +667,8 @@ let geoJsonToFit = {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  margin-left: 27.6%;
-  gap: 14.9%;
+  margin-left: 16%;
+  gap: 44%;
 }
 
 .EmptyContainer{
@@ -948,13 +948,25 @@ let geoJsonToFit = {
 
     <section> <!-- fifth section-->
         <div class="EmptyContainer">
-        <div class="Circles-container-equalsize">
-          {#if progress >= 0.71 && progress <= 0.76}
-            <StaticCircle  circleRadius="44.6" circleColor="rgba(128,128,128, 0.5)"/>
+        <!-- <div class="Circles-container-equalsize">
+          {#if progress >= 0.71 && progress <= 0.78}
+            <StaticCircle  circleRadius="44.6" />
           {/if}
-          {#if progress >= 0.71 && progress <= 0.76}
-          <StaticCircle  circleRadius="50" circleColor="rgba(128, 0, 128, 0.5)"/>
+          {#if progress >= 0.71 && progress <= 0.78}
+          <StaticCircle  circleRadius="50" />
           {/if}
+        </div> -->
+        <div class="Circles-container-animated">
+          <div>
+            {#if progress && progress >= 0.71 && progress <= 0.76}
+              <ShrinkingCircle progress={progress - 0.76} initialRadius={44.6} finalRadius={44.6} circleColor="rgba(128,128,128, 0.5)" />
+            {/if}
+          </div>
+          <div>
+            {#if progress && progress >= 0.71 && progress <= 0.76}
+              <ExpandingCircle progress={progress - 0.76} initialRadius={50} finalRadius={50} circleColor="rgba(128, 0, 128, 0.5)" />
+            {/if}
+          </div>
         </div>
     
         <div class="Circles-container-animated">
