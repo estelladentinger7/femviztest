@@ -40,7 +40,7 @@
   }
 
   let container;
-  let currentColorIndex = 0;
+  let currentColorIndex = 2;
   const colors = ['lightgray', 'gray', 'black'];
   
   onMount(() => {
@@ -86,6 +86,16 @@
     animateCircles(currentColorIndex === colors.length ? null : colors[currentColorIndex]);
   });
 
+   // Show initial animation without a click
+   animateCircles(null);
+
+  // Add event listener to SVG for clicks
+  svg.on('click', () => {
+    currentColorIndex = (currentColorIndex + 1) % (colors.length + 1);
+    animateCircles(currentColorIndex === colors.length ? null : colors[currentColorIndex]);
+  });
+
+  /*
   window.addEventListener('scroll', () => {
     const rect = svg.node().getBoundingClientRect();
 
@@ -93,6 +103,7 @@
       animateCircles(colors[currentColorIndex]);
     }
   });
+  */
 
     const group = select(container)
       .append('svg')

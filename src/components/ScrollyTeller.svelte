@@ -25,6 +25,7 @@ import Health6months from "./Health6months.svelte";
 import { fade } from 'svelte/transition';
 import AnimatedLineChart from './AnimatedMotivation.svelte';
 import dataset from './dataset.js';
+import Conclusion from './Conclusion.svelte';
 	
 let selectedSeries = dataset[0];
 	
@@ -210,6 +211,14 @@ let geoJsonToFit = {
     height: 100%;
     opacity: 0.2;
     z-index: -1;
+  }
+
+  .conclusion_section {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    position: relative;
   }
 
 
@@ -540,8 +549,6 @@ let geoJsonToFit = {
     transition: opacity 2s; /*, visibility 2s; */
     top:0em;
   }
-
-
   
 .image.visible1 {
     opacity: 0.2;
@@ -562,7 +569,7 @@ let geoJsonToFit = {
     background-position: center center;
   }
 
-  .image.visible7 {
+  .image.visible6 {
     opacity: 0.2;
     visibility: visible;
     /* background-image: url('./budgetspending.png'); */
@@ -617,27 +624,22 @@ let geoJsonToFit = {
 }
 
 .Sexownerbp {
-  width: 500px;
-  height: 100px;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 4px var(--color-shadow);
+  width: 500%;
+  height: 100%;
   padding: 50px;
   left: 0%;
   top: 0%;
   margin-top: 0px;
-  margin-bottom: 300px;
   position: relative;
 }
 
 .Sexownersm {
-  width: 500px;
-  height: 100px;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 4px var(--color-shadow);
+  width: 500%;
+  height: 100%;
   padding: 50px;
   left: 0%;
   top: 0%;
-  margin-bottom: 300px;
+  margin-bottom: 400px;
   position: relative;
 }
 
@@ -786,7 +788,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible6} > 
-      <h4>SIX - Same <strong>stuff</strong>, like yeah </h4>
+      <h4>Of the families who spent remittances on intermediaries, <b>42%</b> of single mother households spent <b>over half</b> of their remittances on intermediaries, compared to only <b>24%</b> of biparental households</h4>
     </div>
 
 
@@ -814,7 +816,7 @@ let geoJsonToFit = {
       <img src="./Business.jpeg" alt="business" style="width: 100%; height: 100vh"/>
     </div>
 
-    <div class="image" class:visible7={isVisible6}> <!-- background image for section 7-->
+    <div class="image" class:visible6={isVisible6}> <!-- background image for section 7-->
       <img src="./budgetspending.png" alt="budget" style="width: 100%; height: 100vh"/>
     </div>
 
@@ -1015,7 +1017,7 @@ let geoJsonToFit = {
 
 
     <section> <!-- sixth section-->
-      <h2>Cost of Knowledge: Single mothers spend more on intemediaries</h2>
+      <h2>Cost of Knowledge: Single mother households spend more on intemediaries</h2>
       <IntSankey />
     </section>
 
@@ -1024,9 +1026,10 @@ let geoJsonToFit = {
   </div>
 
 </Scroller>
-<div class = "title_section" bind:clientHeight={height}> 
- 
-<Title />
+
+<div class = "conclusion_section" bind:clientHeight={height}> 
+  
+  <Conclusion />
   
 </div>
 
