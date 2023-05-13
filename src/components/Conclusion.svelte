@@ -66,7 +66,7 @@
         margin-bottom: 0em;
         font-family: 'Jost', sans-serif;
         font-weight: 600;
-        background-color: rgba(253, 253, 253, 0.85);
+        background-color: rgb(236, 230, 246);
         width: 60%;
         float: right;
   }
@@ -127,7 +127,7 @@ body {
   }
 
   #texttakeawaybox {
-    margin-right: 8%;
+    margin-right: 6%;
     margin-top: 4%;
   }
 
