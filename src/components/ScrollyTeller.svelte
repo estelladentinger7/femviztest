@@ -786,7 +786,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
-      <h4>Circles represent the amount of money that families spend on migration. </h4>
+      <h4>Single mothers face higher migration cost when they do not have awareness beforehand</h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible6} > 
@@ -972,12 +972,12 @@ let geoJsonToFit = {
     
         <div class="Circles-container-animated">
           <div>
-            {#if progress && progress >= 0.78 && progress <= 0.90}
+            {#if progress && progress >= 0.78 && progress <= 0.89}
               <ShrinkingCircle progress={progress - 0.78} initialRadius={44.6} finalRadius={35} circleColor="rgba(128,128,128, 0.5)" />
             {/if}
           </div>
           <div>
-            {#if progress && progress >= 0.78 && progress <= 0.90}
+            {#if progress && progress >= 0.78 && progress <= 0.89}
               <ExpandingCircle progress={progress - 0.78} initialRadius={50} finalRadius={450} circleColor="rgba(128, 0, 128, 0.5)" />
             {/if}
           </div>
@@ -1033,7 +1033,7 @@ let geoJsonToFit = {
 
       <div class="text-columns">
         <ConditionalText progress="{progress}" minProgress="0.88" maxProgress="0.98" textColor='black' text=" " />
-        <ConditionalText progress="{progress}" minProgress="0.88" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text="Single mothers face higher migration cost when they do not have awareness beforehand" />
+        <ConditionalText progress="{progress}" minProgress="0.88" maxProgress="0.98" textColor='black' isBold=true fontSize='22px' containerWidth="50%" text=" " />
         <ConditionalText progress="{progress}" minProgress="0.88" maxProgress="0.98" textColor='purple' text=" " />
       </div>
     </div>

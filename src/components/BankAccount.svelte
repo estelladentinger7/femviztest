@@ -7,6 +7,8 @@
     .sunburst-container {
       display: flex;
       justify-content: space-around;
+      gap: 20%;
+      margin-right: 15%
     }
     .sunburst-title {
       font-size: 18px;
