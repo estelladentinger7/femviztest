@@ -27,7 +27,7 @@
 </div>
 
 <div style="position: relative">
-<h5 style="position: absolute; top: 310px; left: 450px;" >Follow the links below for more information.</h5>  
+<h5 style="position: absolute; top: 300px; left: 450px;" >Follow the links below for more information.</h5>  
   <h3 style="position: absolute; top: 340px; left: 700px;"><a href="https://www.unhcr.org/media/women-run" target="_blank"><br>The UN Refugee Agency: Women on the Run</a>
 </h3>
   <h3 style="position: absolute; top: 390px; left: 650px;"><a href="https://interactive.unwomen.org/multimedia/explainer/migration/en/index.html" target="_blank"><br>UN Women: How Migration is a Gender Equality Issue</a>
@@ -128,7 +128,7 @@ body {
 
   #texttakeawaybox {
     margin-right: 6%;
-    margin-top: 4%;
+    margin-top: 3%;
   }
 
 
