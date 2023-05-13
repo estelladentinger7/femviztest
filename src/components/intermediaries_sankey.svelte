@@ -45,7 +45,7 @@
       target: [2,3,2,3], // To each category
       value:  [24,76,42,58], // The percentages for each category
       // color: Array.from({length: 10}, (_, i) => `rgba(128,0,128,${1 - (i / 10)})`), // Reverse color scale with purple ,
-      color:['lightgray','lightgray','rgba(128,0,128,0.5)','rgba(128,0,128,1)'],
+      color:['lightgray','lightgray','rgba(128,0,128,1)','rgba(128,0,128,0.5)'],
       // color:['rgba(128,128,128,0.5)','rgba(128,128,128,0.5)','rgba(128,0,128,0.5)','rgba(128,0,128,1)'],
       // hovertext: Array.from({length: 10}, (_, i) => `Value: ${[89.46, 3.40, 3.84, 1.65, 0.66, 0.66, 0.22, 0.11, 0.00, 0.00][i]}%<extra></extra>`), // Custom hover text
       hovertemplate: '%{value}% of %{source.label} families spend %{target.label} of migration cost on intermediaries.<extra></extra>',
