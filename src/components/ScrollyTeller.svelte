@@ -922,7 +922,7 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- third section-->
-      <Chart data1={data1} data2={data2} progress={progress*1.3}  {index}/>
+      <Chart data1={data1} data2={data2} progress={progress*2.2}  {index}/>
     
     
     </section>
