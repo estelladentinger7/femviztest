@@ -854,7 +854,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
-      <h4>Single mothers face higher migration cost when they do not have awareness beforehand</h4>
+      <h4>Single mothers face higher migration costs when they do not have awareness beforehand</h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible6} > 
