@@ -966,7 +966,7 @@ let geoJsonToFit = {
     <section> <!-- forth section-->
       <header>
         <h2>And the preparation begins by...</h2> 
-        <p><strong>Click</strong> on each category to find out</p> 
+        <p>Click on each category to find out</p> 
         <nav>
           {#each dataset as series}
             <button on:click|preventDefault={() => select(series)} class:selected={series == selectedSeries} style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">
