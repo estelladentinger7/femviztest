@@ -811,7 +811,7 @@ let geoJsonToFit = {
     >
 
 
-    <div class="takeaway_label" class:showing={isVisibleTAL}> Key take away </div>
+    <div class="takeaway_label" class:showing={isVisibleTAL}> Key takeaway </div>
 
     <div class="livingcond_labels" class:highlighted={isVisible1} > Living conditions </div>
     <div class="rem_labels" class:highlighted={isVisible2}> Finances </div>
