@@ -90,7 +90,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = true;
-      isVisibleTAL = false;
+      isVisibleTAL = true;
     } else if (index === 2) {
       isVisible = false;
       isVisible1 = false;
@@ -958,7 +958,7 @@ let geoJsonToFit = {
         <button on:click|preventDefault="{() => select_graph('health')}" class:selected={selectedGraph === 'health'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Health</button>
         
         <button on:click|preventDefault="{() => select_graph('income')}" class:selected={selectedGraph === 'income'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Income Comparison</button>
-        <button on:click|preventDefault="{() => select_graph('bank')}" class:selected={selectedGraph === 'bank'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Bank Account Onwership</button>
+        <button on:click|preventDefault="{() => select_graph('bank')}" class:selected={selectedGraph === 'bank'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Bank Account Ownership</button>
       </nav>
 
 

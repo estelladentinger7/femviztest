@@ -34,6 +34,37 @@
 </h3>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h6>This data visualization was made with data contributed by the United Nations World Food Programme (WFP).</h6>
+
 
   
 </div>
@@ -103,6 +134,16 @@
         color: white;
         width: 1000px;
         float: right;
+  }
+
+  h6 {
+        text-align: center;
+        font-size: 1em;
+        color: white;
+        margin-top: 0em;
+        margin-bottom: 0em; 
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;       
   }
 
 body {

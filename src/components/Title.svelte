@@ -29,8 +29,7 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+
 
 <h3>An analysis of <strong>Central American Migration</strong> based on the survey developed by <strong>WFP and the International Organization for Migration (IOM).</strong></h3>   
 <h3>Powered by <strong>FemViz</strong> (Badilla, Dafne; Cao, Shurui (Sherry); Dentinger, Estella).</h3>   
