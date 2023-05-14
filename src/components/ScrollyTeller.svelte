@@ -66,6 +66,7 @@ let isVisible3 = false; //for background picture of basic needs
 let isVisible4 = false; //for background picture of housing
 let isVisible5 = false; //for background picture of business
 let isVisible6 = false; //for background picture of remittances
+let isVisibleTAL = false; //for take away label
 
 let show_label = false;
 
@@ -79,6 +80,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = false;
+      isVisibleTAL = false;
     } else if (index === 1) {
       isVisible = false;
       isVisible1 = true;
@@ -88,6 +90,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = true;
+      isVisibleTAL = false;
     } else if (index === 2) {
       isVisible = false;
       isVisible1 = false;
@@ -97,6 +100,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = true;
+      isVisibleTAL = true;
     } else if (index === 3) {
       isVisible = false;
       isVisible1 = false;
@@ -106,6 +110,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = true;
+      isVisibleTAL = true;
     } else if (index === 4) {
       isVisible = false;
       isVisible1 = false;
@@ -115,6 +120,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = true;
+      isVisibleTAL = true;
     } else if (index === 5) {
       isVisible = false;
       isVisible1 = false;
@@ -124,6 +130,7 @@ let show_label = false;
       isVisible5 = true;
       isVisible6 = false;
       show_label = true;
+      isVisibleTAL = true;
     } else if (index === 6) {
       isVisible = false;
       isVisible1 = false;
@@ -133,6 +140,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = true;
       show_label = true;
+      isVisibleTAL = true;
     } else if (index === 7) {
       isVisible = false;
       isVisible1 = false;
@@ -142,6 +150,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = false;
+      isVisibleTAL = false;
     } else {
       isVisible = false;
       isVisible1 = false;
@@ -151,6 +160,7 @@ let show_label = false;
       isVisible5 = false;
       isVisible6 = false;
       show_label = false;
+      isVisibleTAL = false;
     }
   }
 
@@ -354,17 +364,37 @@ let geoJsonToFit = {
     background-color: rgba(128,0,128, 1);
   }
 
+  .takeaway_label {
+  position: absolute;
+  top: 51%;
+  left: 9.5%;
+  background-color: rgba(128,0,128, 1);
+  padding: 6px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 1.5em;
+  z-index: 9999;
+  visibility: hidden;
+  }
+
+  .takeaway_label.showing {
+    visibility: visible;
+  }
+
   .takeaway_box {
   position: absolute;
   width: 25%;
-  top: 50%;
+  top: 52%;
   left: 2%;
   background-color: white;
-  padding: 5px;
+  padding: 0px;
   font-family: 'Jost', sans-serif;
   font-weight: 300;
   color: black;
   visibility: hidden;
+  margin-top: 0em;
+  
   }
 
   .takeaway_box.showing {
@@ -780,6 +810,8 @@ let geoJsonToFit = {
       bind:clientHeight={height}
     >
 
+
+    <div class="takeaway_label" class:showing={isVisibleTAL}> Key take away </div>
 
     <div class="livingcond_labels" class:highlighted={isVisible1} > Living conditions </div>
     <div class="rem_labels" class:highlighted={isVisible2}> Finances </div>
