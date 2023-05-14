@@ -67,6 +67,7 @@ let isVisible4 = false; //for background picture of housing
 let isVisible5 = false; //for background picture of business
 let isVisible6 = false; //for background picture of remittances
 let isVisibleTAL = false; //for take away label
+let isVisibleClick = false; //for take away label
 
 let show_label = false;
 
@@ -81,6 +82,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = false;
       isVisibleTAL = false;
+      isVisibleClick = false;
     } else if (index === 1) {
       isVisible = false;
       isVisible1 = true;
@@ -91,6 +93,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = true;
       isVisibleTAL = true;
+      isVisibleClick = false;
     } else if (index === 2) {
       isVisible = false;
       isVisible1 = false;
@@ -101,6 +104,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = true;
       isVisibleTAL = true;
+      isVisibleClick = true;
     } else if (index === 3) {
       isVisible = false;
       isVisible1 = false;
@@ -111,6 +115,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = true;
       isVisibleTAL = true;
+      isVisibleClick = false;
     } else if (index === 4) {
       isVisible = false;
       isVisible1 = false;
@@ -121,6 +126,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = true;
       isVisibleTAL = true;
+      isVisibleClick = true;
     } else if (index === 5) {
       isVisible = false;
       isVisible1 = false;
@@ -131,6 +137,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = true;
       isVisibleTAL = true;
+      isVisibleClick = false;
     } else if (index === 6) {
       isVisible = false;
       isVisible1 = false;
@@ -141,6 +148,7 @@ let show_label = false;
       isVisible6 = true;
       show_label = true;
       isVisibleTAL = true;
+      isVisibleClick = false;
     } else if (index === 7) {
       isVisible = false;
       isVisible1 = false;
@@ -151,6 +159,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = false;
       isVisibleTAL = false;
+      isVisibleClick = false;
     } else {
       isVisible = false;
       isVisible1 = false;
@@ -161,6 +170,7 @@ let show_label = false;
       isVisible6 = false;
       show_label = false;
       isVisibleTAL = false;
+      isVisibleClick = false;
     }
   }
 
@@ -404,14 +414,16 @@ let geoJsonToFit = {
   .textclick_box {
   position: absolute;
   width: 25%;
-  top: 40%;
-  left: 2%;
-  background-color: white;
-  padding: 5px;
+  top: 130%;
+  left: 6.2%;
+  /*background-color: white;*/
+  padding: 0px;
   font-family: 'Jost', sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   color: black;
   visibility: hidden;
+  z-index: 9999;
+  font-size: 1.3em;
   }
 
   .textclick_box.showing {
@@ -812,6 +824,7 @@ let geoJsonToFit = {
 
 
     <div class="takeaway_label" class:showing={isVisibleTAL}> Key takeaway </div>
+    <div class="textclick_box" class:showing={isVisibleClick}> Click on the next category </div>
 
     <div class="livingcond_labels" class:highlighted={isVisible1} > Living conditions </div>
     <div class="rem_labels" class:highlighted={isVisible2}> Finances </div>
@@ -1116,7 +1129,7 @@ let geoJsonToFit = {
 
 
     <section> <!-- sixth section-->
-      <h2>Cost of Knowledge: Single mother households spend more on intemediaries</h2>
+      <h2>Cost of Knowledge: Single mother households spend more on intermediaries</h2>
       <IntSankey />
     </section>
 
