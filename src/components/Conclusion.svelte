@@ -8,42 +8,32 @@
 </script>
 
 <div id="container">
-  <br>
-  <br>
-  <br>
+  
   <br>
   <br>
 <h1>Single mother households in Central America face more obstacles than biparental households. </h1>
+
 <br>
+<h4>We must look at migration through a feminist lens.</h4>
+
+<div id="texttakeawaybox">
 <h2>
-<ul>
-  <li>Women are less likely to own their home or own a bank account</li> 
-  <li>Single mother households require more preparation to migrate</li>
-  <li>Single mother households have a cost of knowledge. They are more likely to be unaware of the costs of migration, and as a result have a higher cost of migration</li>
-  <li>Specifically, single mother households spend a higher percentage of their remittances on intermediaries.</li>
+<ul style="list-style-position: outside; padding-left: 1.5em; line-height: 1.1em;">
+  <li>Women are less likely to own their home or own a bank account.</li> <br>
+  <li>Single mother households require more preparation to migrate.</li> <br>
+  <li>When single mother households are unaware of the costs of migration, they have a higher cost of knowledge.</li> <br>
+  <li>Specifically, single mother households spend a higher percentage of their remittances on intermediaries.</li> 
 </ul></h2>
+</div>
 
-<br>
-<br>
-<h1>We must look at migration through a feminist lens.<br>Follow the links below for more information.</h1>  
-
-  <h3><a href="https://www.unhcr.org/media/women-run" target="_blank"><br>The UN Refugee Agency: Women on the Run</a>
+<div style="position: relative">
+<h5 style="position: absolute; top: 300px; left: 450px;" >Follow the links below for more information.</h5>  
+  <h3 style="position: absolute; top: 340px; left: 700px;"><a href="https://www.unhcr.org/media/women-run" target="_blank"><br>The UN Refugee Agency: Women on the Run</a>
 </h3>
-  <h3><a href="https://interactive.unwomen.org/multimedia/explainer/migration/en/index.html" target="_blank"><br>UN Women: How Migration is a Gender Equality Issue</a>
+  <h3 style="position: absolute; top: 390px; left: 650px;"><a href="https://interactive.unwomen.org/multimedia/explainer/migration/en/index.html" target="_blank"><br>UN Women: How Migration is a Gender Equality Issue</a>
 </h3>
-  
-  
- 
+</div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
   
 </div>
@@ -57,27 +47,28 @@
 
 
   h1 {
-        text-align: center;
-        font-size: 2.6em;
-        margin-top: -0.5em;
+        text-align: left;
+        font-size: 3.2em;
+        margin-top: 0em;
         margin-bottom: 0em;
         font-family: 'Jost', sans-serif;
         font-weight: 600;
         color: white;
-        width: 1000px;
+        width: 1200px;
+        margin-left: 4%;
   }
 
   h2 {
         text-align: left;
-        font-size: 1.4em;
+        font-size: 1.5em;
         color: black;
         margin-top: 0em;
         margin-bottom: 0em;
         font-family: 'Jost', sans-serif;
         font-weight: 600;
-        background-color: rgba(253, 253, 253, 0.7);
-       
-                
+        background-color: rgb(236, 230, 246);
+        width: 60%;
+        float: right;
   }
 
   h3 {
@@ -87,8 +78,31 @@
         margin-top: 0em;
         margin-bottom: 0em; 
         font-family: 'Jost', sans-serif;
-        font-weight: 600;  
-        display: flex;     
+        font-weight: 600;   
+  }
+
+  h4 {
+        text-align: left;
+        font-size: 2.6em;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;
+        color: white;
+        width: 1000px;
+        margin-left: 4%;
+  }
+
+  h5 {
+        text-align: center;
+        font-size: 2.6em;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        font-family: 'Jost', sans-serif;
+        font-weight: 600;
+        color: white;
+        width: 1000px;
+        float: right;
   }
 
 body {
@@ -107,11 +121,16 @@ body {
     /* background-position: center; */
     /* background-repeat: no-repeat; */
     height: 100vh; /* Set the container height to the viewport height to cover the whole screen */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* display: absolute; 
+    flex-direction: column; 
+    justify-content: center; */ 
   }
+
+  #texttakeawaybox {
+    margin-right: 6%;
+    margin-top: 3%;
+  }
+
 
   a:link {
   color: white;

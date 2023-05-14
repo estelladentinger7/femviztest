@@ -339,7 +339,7 @@ let geoJsonToFit = {
   .takeaway_box {
   position: absolute;
   width: 25%;
-  top: 70%;
+  top: 50%;
   left: 2%;
   background-color: white;
   padding: 5px;
@@ -759,9 +759,9 @@ let geoJsonToFit = {
 
     <div class="takeaway_box" class:showing={isVisible2} > 
       {#if selectedGraph === 'bank'}
-      <h4>And single mothers may not have real control over their finance.</h4>
+      <h4>And single mothers may not have real control over their finances.</h4>
       <h4>Only <strong>29%</strong> of single mother households have bank accounts, and only <strong>15.5%</strong> of these owners (<strong>4.5%</strong> of total single mother households) are <strong>female</strong>.</h4>
-      <h4><strong>Single mothers have less access to investments or safe ways of financing.</strong></h4>
+      <!--<h4><strong>Single mothers have less access to investments or safe ways of financing.</strong></h4>-->
       {/if} 
       {#if selectedGraph === 'food'}
       <h4>For basic needs like food, biparental households and single mother households have similar spending patterns.</h4>
@@ -776,7 +776,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible3} > 
-      <h4>THREE - Same <strong>stuff</strong>, like yeah </h4>
+      <h4>Even though single mothers have very similar motivation to migrate compared to biparent families, <strong>differences appear when we look at how they prepare to do so...</strong> </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible4} > 
@@ -786,7 +786,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible5} > 
-      <h4>Single mothers face higher migration cost when they do not have awareness beforehand</h4>
+      <h4>Circles represent the amount of money that families spend on migration. </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible6} > 
@@ -922,7 +922,7 @@ let geoJsonToFit = {
     </section>
 
     <section> <!-- third section-->
-      <Chart data1={data1} data2={data2} progress={progress*1.3}  {index}/>
+      <Chart data1={data1} data2={data2} progress={progress*2.2}  {index}/>
     
     
     </section>
