@@ -214,8 +214,8 @@ let geoJsonToFit = {
   left: 0;
   height: 100%;
   width: 100%;
-  background: url('../data/mujerencampo.png') no-repeat center center;
-  background-size: cover;
+  /*background: url('../data/mujerencampo.png') no-repeat center center;
+  background-size: cover;*/
   opacity: 0.3; 
 }
 
@@ -560,7 +560,7 @@ let geoJsonToFit = {
 
 
 .image {
-    width: 100%;
+    /*width: 100%;*/
     height: 100vh; /* check problem when setting width */
     position: absolute;
     opacity: 0.1;
@@ -839,11 +839,11 @@ let geoJsonToFit = {
     </div>
 
     <div class="image" class:visible2={isVisible2}> <!-- background image for section 2-->
-      <img src="./housing_sm.jpeg" alt="housing_sm" style="width: 100%; height: 100vh"/>
+      <img src="./budgetspending.png" alt="housing_sm" style="width: 100%; height: 100vh"/>
     </div>
 
     <div class="image" class:visible3={isVisible3}> <!-- background image for section 3-->
-      <img src="./Food.png" alt="food" style="width: 100%; height: 100vh"/>
+      <img src="./migration.jpg" alt="food" style="width: 100%; height: 100vh"/>
     </div>
 
     <div class="image" class:visible4={isVisible4}> <!-- background image for section 4-->
@@ -851,11 +851,11 @@ let geoJsonToFit = {
     </div>
 
     <div class="image" class:visible5={isVisible5}> <!-- background image for section 5-->
-      <img src="./Business.jpeg" alt="business" style="width: 100%; height: 100vh"/>
+      <img src="./migration_mother.jpeg" alt="business" style="width: 100%; height: 100vh"/>
     </div>
 
     <div class="image" class:visible6={isVisible6}> <!-- background image for section 7-->
-      <img src="./budgetspending.png" alt="budget" style="width: 100%; height: 100vh"/>
+      <img src="./caravan.png" alt="budget" style="width: 100%; height: 100vh"/>
     </div>
 
 

@@ -79,6 +79,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  #container {
+    /* background-image: url("./conclusion_protest.png"); */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../data/mujerencampo.png") no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    height: 100vh; /* Set the container height to the viewport height to cover the whole screen */
+    /* display: absolute; 
+    flex-direction: column; 
+    justify-content: center; */ 
+  }
+  
 </style>
 
 
