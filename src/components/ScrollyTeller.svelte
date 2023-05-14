@@ -189,7 +189,7 @@ let geoJsonToFit = {
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,300;0,600;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,300;0,400;0,600;1,300&display=swap');
   
   .title_section {
     height: 100vh;
@@ -519,7 +519,7 @@ let geoJsonToFit = {
         margin-bottom: 3em; 
         font-family: 'Jost', sans-serif;
         font-weight: 300;
-        font-style: italic;       
+               
   }
 
   .text {
@@ -865,7 +865,7 @@ let geoJsonToFit = {
 
       <h4>Single mother families are less likely to own their home than biparental families. Of families who own their homes, let's look at who owns the property across both family types.</h4>
       <h4>Are women less likely to be property owners?</h4>
-      <p>Click to see the proportion of property ownership by sex</p>
+      <p><strong>Click to see</strong> the proportion of property ownership by sex</p>
       <div class="sexowners-container">
         <div class="Sexownerbp">
           <Sexownerbp {index} />
@@ -883,7 +883,7 @@ let geoJsonToFit = {
 
     <section> <!-- second section -->
       <h2>Why is that? Are they financially different?</h2>
-      <p>Click on each category to see families' financial situations</p> 
+      <p><strong>Click on each category</strong> to see families' financial situations</p> 
 
       <nav>
         <button on:click|preventDefault="{() => select_graph('food')}" class:selected={selectedGraph === 'food'}  style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">Spending on Food</button>
@@ -930,7 +930,7 @@ let geoJsonToFit = {
     <section> <!-- forth section-->
       <header>
         <h2>And the preparation begins by...</h2> 
-        <p>Click on each category to find out</p> 
+        <p><strong>Click on each category</strong> to find out</p> 
         <nav>
           {#each dataset as series}
             <button on:click|preventDefault={() => select(series)} class:selected={series == selectedSeries} style="font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1em; align-content: center;">
