@@ -858,7 +858,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible6} > 
-      <h4>Of the families who spent remittances on intermediaries, <b>42%</b> of single mother households spent <b>over half</b> of their remittances on intermediaries, compared to only <b>24%</b> of biparental households</h4>
+      <h4>Within the families who spent on intermediaries, <b>42%</b> of single mother households spent <b>over half</b> of their budget on this item, compared to only <b>24%</b> of biparental households</h4>
     </div>
 
 

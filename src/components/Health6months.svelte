@@ -38,7 +38,7 @@
   title: '<b>Fraction (%) of Household Spending on Health in the Past 6 Months',
   font: {
     family: "'Jost', sans-serif"},
-  xaxis: {title: 'Fraction Segment of Household Spending (Left Inlcusive)'},
+  xaxis: {title: 'Fraction Segment of Household Spending'},
   yaxis: {
     autorange: true,
     showgrid: true,
