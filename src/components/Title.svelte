@@ -29,7 +29,7 @@
 <br>
 <br>
 
-<h3>An analysis of <strong>Central American Migration</strong> based on the survey developed by <strong>WFP and the International Organization for Migration (IOM).</strong></h3>     
+<h3>An analysis of <strong>Central American Migration</strong> based on the survey developed by <strong>WFP and the International Organization for Migration (IOM).</strong></h3>   
 
 
 
@@ -72,12 +72,13 @@
         font-weight: 300;       
   }
 
-body {
+/* body {
     background-image: url("./mujerencampo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
+  } */
+
 </style>
 
 

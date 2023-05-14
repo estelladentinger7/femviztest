@@ -188,17 +188,38 @@ let geoJsonToFit = {
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,300;0,600;1,300&display=swap');
   
-  .title_section {
+  /* .title_section {
     height: 100vh;
     width: 100%;
     text-align: center ;
     justify-content: center;
-    max-width: 100%; /* adjust at will */
+    max-width: 100%; 
     position: relative; 
-    background-image: none;
-  }
+  } */
 
-  .title_section::before {
+  .title_section {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.title_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('../data/mujerencampo.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3; 
+}
+
+  /* .title_section::before {
     content: '';
     display: block;
     position: absolute;
@@ -208,7 +229,7 @@ let geoJsonToFit = {
     height: 100%;
     opacity: 0.2;
     z-index: -1;
-  }
+  } */
 
   .conclusion_section {
     height: 100vh;
