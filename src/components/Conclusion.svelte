@@ -58,7 +58,7 @@
 <br>
 <br>
 <br>
-<br>
+
 
 <h6>This data visualization was made with data contributed by the United Nations World Food Programme (WFP).</h6>
 
