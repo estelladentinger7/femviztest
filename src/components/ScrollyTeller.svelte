@@ -1058,7 +1058,7 @@ let geoJsonToFit = {
       <!-- <h5>For those who are aware of the migration cost beforehand, </h5> -->
       <div class="text-columns">
         <ConditionalText progress="{progress}" minProgress="0.64" maxProgress="0.98" textColor='black' text=" " />
-        <ConditionalText progress="{progress}" minProgress="0.64" maxProgress="0.98" textColor='black'  fontSize='22px' containerWidth="80%" text="For those who are aware of the migration cost beforehand." />
+        <ConditionalText progress="{progress}" minProgress="0.64" maxProgress="0.98" textColor='black'  fontSize='22px' containerWidth="80%" text="For those who are aware of the migration cost beforehand" />
         <ConditionalText progress="{progress}" minProgress="0.64" maxProgress="0.98" textColor='purple' text=" " />
       </div>
 

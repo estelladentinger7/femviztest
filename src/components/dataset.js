@@ -25,7 +25,7 @@ export default [
 	}
     ,
 	{
-		label: "Prepare migration documents ",
+		label: "Preparing migration documents ",
 		points: [7, 4],
 		message: "...while biparental families seem to rely more frequently on regular migration processes."
 	}
