@@ -3,17 +3,13 @@
 import Scroller from "@sveltejs/svelte-scroller";
 import Title from "./Title.svelte";
 import Chart from './Chart.svelte';
-import PropertyType from './propertyType.svelte';
-import PropertyTypesm from './propertyTypesm.svelte';
-import PropertyTypebp from './propertyTypebp.svelte';
+
 import Sexownerbp from './sexownerbp.svelte';
 import Sexownersm from './sexownersm.svelte';
-import StaticCircle from "./StaticCircle.svelte";
+
 import ExpandingCircle from "./ExpandingCircles.svelte";
 import ShrinkingCircle from './ShrinkingCircles.svelte';
-import BasicNeedsCompare from "./BasicNeedsCompare.svelte";
-import HousingCompare from "./HousingCompare.svelte";
-import BusinessCompare from "./BusinessCompare.svelte";
+
 import ConditionalText from "./ConditionalText.svelte";
 import Intermediary from "./Intermediary.svelte";
 import Textclick from "./textclick_511.svelte";
@@ -26,6 +22,7 @@ import { fade } from 'svelte/transition';
 import AnimatedLineChart from './AnimatedMotivation.svelte';
 import dataset from './dataset.js';
 import Conclusion from './Conclusion.svelte';
+
 	
 let selectedSeries = dataset[0];
 	
@@ -191,17 +188,38 @@ let geoJsonToFit = {
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,300;0,400;0,600;1,300&display=swap');
   
-  .title_section {
+  /* .title_section {
     height: 100vh;
     width: 100%;
     text-align: center ;
     justify-content: center;
-    max-width: 100%; /* adjust at will */
+    max-width: 100%; 
     position: relative; 
-    background-image: none;
-  }
+  } */
 
-  .title_section::before {
+  .title_section {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.title_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('../data/mujerencampo.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3; 
+}
+
+  /* .title_section::before {
     content: '';
     display: block;
     position: absolute;
@@ -211,7 +229,7 @@ let geoJsonToFit = {
     height: 100%;
     opacity: 0.2;
     z-index: -1;
-  }
+  } */
 
   .conclusion_section {
     height: 100vh;
@@ -671,9 +689,27 @@ let geoJsonToFit = {
   margin-left: 16%;
   gap: 44%;
 }
+.Circles-container-animated2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  margin-left: 16%;
+  gap: 44%;
+}
+
 
 .EmptyContainer{
   height: 150vh;
+  position: relative;
+}
+
+.EmptyContainer2{
+  height: 20vh;
   position: relative;
 }
 
@@ -969,6 +1005,7 @@ let geoJsonToFit = {
             {/if}
           </div>
         </div>
+
     
         <div class="Circles-container-animated">
           <div>
@@ -983,15 +1020,6 @@ let geoJsonToFit = {
           </div>
         </div>
 
-
-        <!-- <div class="Circles-container-equalsize">
-          {#if progress >= 0.87 && progress <= 0.90}
-            <StaticCircle circleColor="rgba(128,128,128, 0.5)" circleRadius={41.61}/>
-          {/if}
-          {#if progress >= 0.87 && progress <= 0.90}
-          <StaticCircle circleColor="rgba(128, 0, 128, 0.5)" circleRadius={85}/>
-          {/if}
-        </div> -->
 
       <h2>Cost of migration versus awareness </h2>
       <p>Circles represent the amount of money that families spend on migration</p>

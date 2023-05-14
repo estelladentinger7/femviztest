@@ -29,7 +29,7 @@
 <br>
 <br>
 
-<h3>An analysis of <strong>Central American Migration</strong> based on the survey developed by <strong>WFP and the International Organization for Migration (IOM).</strong></h3>     
+<h3>An analysis of <strong>Central American Migration</strong> based on the survey developed by <strong>WFP and the International Organization for Migration (IOM).</strong></h3>   
 
 </div>
 
@@ -74,23 +74,10 @@
   }
 
 body {
-    background-image: url("./data/mujerencampo.png");
+    background-image: url("./mujerencampo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-
-  #container {
-    /* background-image: url("./conclusion_protest.png"); */
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../data/mujerencampo.png") no-repeat top center;
-    background-size: cover;
-    background-attachment: fixed;
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    height: 100vh; /* Set the container height to the viewport height to cover the whole screen */
-    /* display: absolute; 
-    flex-direction: column; 
-    justify-content: center; */ 
   }
 </style>
 
