@@ -110,7 +110,7 @@ var dataBIP = [{
 </script>
 
 <div class="sunburst-title">Bank Account Ownership by Sex for Each Family Type</div>
-<div class="sunburst-subtitle">Click on the graph to see more details</div>
+<div class="sunburst-subtitle"><strong>Click</strong> on the graph to see more details</div>
 <div class="sunburst-container">
   <div bind:this={myDiv1} class="sunburst-diagram"></div>
   <div bind:this={myDiv2} class="sunburst-diagram"></div>

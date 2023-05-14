@@ -36,7 +36,7 @@
     showlegend: true,
     annotations: [
     {
-        text: 'Hover over the graph to see more details',
+        text: '<b>Hover</b> over the graph to see more details',
         showarrow: false,
         xref: 'paper',
         yref: 'paper',
