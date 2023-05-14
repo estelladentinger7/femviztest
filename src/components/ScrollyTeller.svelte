@@ -844,7 +844,7 @@ let geoJsonToFit = {
     </div>
 
     <div class="takeaway_box" class:showing={isVisible3} > 
-      <h4>Even though single mothers have very similar motivation to migrate compared to biparent families, <strong>differences appear when we look at how they prepare to do so...</strong> </h4>
+      <h4>Even though single mothers have very similar motivations to migrate compared to biparent families, <strong>differences appear when we look at how they prepare to do so...</strong> </h4>
     </div>
 
     <div class="takeaway_box" class:showing={isVisible4} > 
